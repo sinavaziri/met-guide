@@ -4,6 +4,7 @@ import { useParams, useRouter } from 'next/navigation';
 import useSWR from 'swr';
 import Image from 'next/image';
 import { useState, useRef, useCallback } from 'react';
+import { useAudio } from '@/lib/audio-context';
 
 // Types for Met object data
 interface MetObject {
@@ -216,8 +217,8 @@ function ZoomableImage({
       
       {/* Zoom hint */}
       {!isZoomed && (
-        <div className="absolute bottom-3 right-3 px-3 py-1.5 bg-black/50 backdrop-blur-sm 
-                        rounded-full text-white text-xs font-medium opacity-70">
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-black/50 backdrop-blur-sm 
+                        rounded-full text-white text-xs font-medium opacity-70 text-center">
           Pinch or double-tap to zoom
         </div>
       )}
@@ -248,6 +249,177 @@ function DetailRow({ label, value }: { label: string; value: string | null }) {
     <div className="py-3 border-b border-stone-100 last:border-0">
       <dt className="text-xs uppercase tracking-wider text-stone-400 mb-1">{label}</dt>
       <dd className="text-stone-700">{value}</dd>
+    </div>
+  );
+}
+
+// Narration response type
+interface NarrationResponse {
+  narration: string;
+  cached: boolean;
+}
+
+// Guide section component
+function GuideSection({ objectId, title }: { objectId: number; title: string }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [narration, setNarration] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  
+  const audio = useAudio();
+
+  const fetchNarration = async () => {
+    if (narration) {
+      setIsExpanded(!isExpanded);
+      return;
+    }
+
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch(`/api/narrate?id=${objectId}`);
+      
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.error || 'Failed to load guide');
+      }
+
+      const data: NarrationResponse = await response.json();
+      setNarration(data.narration);
+      setIsExpanded(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to load guide');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handlePlayAudio = () => {
+    if (narration) {
+      audio.play({
+        objectId,
+        title,
+        text: narration,
+      });
+    }
+  };
+
+  return (
+    <div className="mx-1">
+      <button
+        onClick={fetchNarration}
+        disabled={isLoading}
+        className="w-full flex items-center justify-between p-4 bg-gradient-to-r 
+                   from-amber-50 to-orange-50 hover:from-amber-100 hover:to-orange-100
+                   rounded-2xl transition-all duration-200 group border border-amber-100
+                   disabled:opacity-70 disabled:cursor-wait"
+      >
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center
+                          shadow-sm group-hover:scale-110 transition-transform">
+            {isLoading ? (
+              <div className="w-5 h-5 border-2 border-amber-500 border-t-transparent 
+                              rounded-full animate-spin" />
+            ) : (
+              <span className="text-xl">🎙️</span>
+            )}
+          </div>
+          <div className="text-left">
+            <h3 className="font-semibold text-stone-900">
+              {isLoading ? 'Loading guide...' : 'Audio Guide'}
+            </h3>
+            <p className="text-sm text-stone-500">
+              {narration ? 'Tap to read' : 'Learn the story behind this piece'}
+            </p>
+          </div>
+        </div>
+        
+        <svg 
+          className={`w-5 h-5 text-stone-400 transition-transform duration-200
+                      ${isExpanded ? 'rotate-180' : ''}`}
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
+                d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      {/* Error state */}
+      {error && (
+        <div className="mt-3 p-4 bg-red-50 rounded-xl border border-red-100">
+          <p className="text-sm text-red-600">{error}</p>
+          <button
+            onClick={fetchNarration}
+            className="mt-2 text-sm text-red-700 font-medium hover:underline"
+          >
+            Try again
+          </button>
+        </div>
+      )}
+
+      {/* Narration content */}
+      {isExpanded && narration && (
+        <div className="mt-3 p-5 bg-stone-50 rounded-2xl border border-stone-100
+                        animate-in fade-in slide-in-from-top-2 duration-300">
+          <div className="flex items-start justify-between gap-3 mb-4">
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center
+                              flex-shrink-0">
+                <span className="text-sm">🎨</span>
+              </div>
+              <div>
+                <h4 className="font-medium text-stone-900 text-sm">Your Guide</h4>
+                <p className="text-xs text-stone-400">AI-generated narration</p>
+              </div>
+            </div>
+            
+            {/* Listen button */}
+            <button
+              onClick={handlePlayAudio}
+              disabled={audio.isLoading && audio.currentTrack?.objectId === objectId}
+              className="flex items-center gap-2 px-4 py-2 bg-stone-900 text-white 
+                         rounded-full text-sm font-medium hover:bg-stone-800 
+                         active:scale-95 transition-all disabled:opacity-50"
+            >
+              {audio.isLoading && audio.currentTrack?.objectId === objectId ? (
+                <>
+                  <div className="w-4 h-4 border-2 border-white/30 border-t-white 
+                                  rounded-full animate-spin" />
+                  <span>Loading...</span>
+                </>
+              ) : audio.isPlaying && audio.currentTrack?.objectId === objectId ? (
+                <>
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
+                  </svg>
+                  <span>Playing</span>
+                </>
+              ) : (
+                <>
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                  <span>Listen</span>
+                </>
+              )}
+            </button>
+          </div>
+          
+          <p className="text-stone-700 leading-relaxed whitespace-pre-line">
+            {narration}
+          </p>
+          
+          <div className="mt-4 pt-4 border-t border-stone-200">
+            <p className="text-xs text-stone-400 italic">
+              💡 Tip: This narration is generated by AI based on museum records. 
+              For verified information, check the Met&apos;s official website.
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -303,6 +475,9 @@ function ObjectDetail({ object }: { object: MetObject }) {
           <span>Museum Highlight</span>
         </div>
       )}
+
+      {/* Guide Section */}
+      <GuideSection objectId={object.objectID} title={object.title || 'Untitled'} />
       
       {/* Details */}
       <div className="bg-stone-50 rounded-2xl p-5 mx-1">

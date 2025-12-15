@@ -1,16 +1,19 @@
 import { NextResponse } from 'next/server';
+import { MET_HIGHLIGHT_IDS } from '@/data/met_highlights';
 
-// Hardcoded object ID for The Temple of Dendur (object ID: 547802)
-// This is a well-known object that should always be available
-const TEMPLE_OF_DENDUR_ID = 547802;
+const MET_API_BASE = 'https://collectionapi.metmuseum.org/public/collection/v1/objects';
 
 export async function GET() {
-  const baseUrl = 'https://collectionapi.metmuseum.org/public/collection/v1/objects';
-
   try {
+    // Randomly select an object ID from the highlights list
+    const randomIndex = Math.floor(Math.random() * MET_HIGHLIGHT_IDS.length);
+    const randomObjectId = MET_HIGHLIGHT_IDS[randomIndex];
+
     // Fetch object details
-    const objectUrl = `${baseUrl}/${TEMPLE_OF_DENDUR_ID}`;
-    const response = await fetch(objectUrl);
+    const objectUrl = `${MET_API_BASE}/${randomObjectId}`;
+    const response = await fetch(objectUrl, {
+      next: { revalidate: 3600 }, // Cache for 1 hour
+    });
 
     if (!response.ok) {
       throw new Error(`Met API returned ${response.status}`);
@@ -18,7 +21,32 @@ export async function GET() {
 
     const object = await response.json();
 
-    return NextResponse.json(object);
+    // Return a normalized subset of the data (matching the [id] route format)
+    return NextResponse.json({
+      objectID: object.objectID,
+      title: object.title || null,
+      artistDisplayName: object.artistDisplayName || null,
+      artistDisplayBio: object.artistDisplayBio || null,
+      objectDate: object.objectDate || null,
+      medium: object.medium || null,
+      dimensions: object.dimensions || null,
+      department: object.department || null,
+      culture: object.culture || null,
+      period: object.period || null,
+      classification: object.classification || null,
+      primaryImage: object.primaryImage || null,
+      primaryImageSmall: object.primaryImageSmall || null,
+      additionalImages: object.additionalImages || [],
+      objectURL: object.objectURL || null,
+      isHighlight: object.isHighlight || false,
+      accessionNumber: object.accessionNumber || null,
+      accessionYear: object.accessionYear || null,
+      creditLine: object.creditLine || null,
+      geographyType: object.geographyType || null,
+      city: object.city || null,
+      country: object.country || null,
+      repository: object.repository || null,
+    });
   } catch (error) {
     console.error('Error fetching random object:', error);
     return NextResponse.json(

@@ -12,27 +12,27 @@ todos:
       - m0-steel-thread
   - id: m2-highlights-tour
     content: Add build-time highlights tour generation script and tours UI + /api/tours endpoint.
-    status: pending
+    status: completed
     dependencies:
       - m1-object-experience
   - id: m3-department-tours
     content: Add department-based tours (parameterized generation + UI pages).
-    status: pending
+    status: completed
     dependencies:
       - m2-highlights-tour
   - id: m4-narration
     content: Implement /api/narrate with caching and object page guide section (optionally streaming).
-    status: pending
+    status: completed
     dependencies:
       - m1-object-experience
   - id: m5-scan
     content: "Implement scan flow: client-side image resize, /api/identify (vision → keywords), Met search, top-3 rerank UI."
-    status: pending
+    status: completed
     dependencies:
       - m4-narration
   - id: m6-hardening
     content: Add TTS generation + persistent audio player; add rate limiting and basic production hardening.
-    status: pending
+    status: completed
     dependencies:
       - m5-scan
 ---

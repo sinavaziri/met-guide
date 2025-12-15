@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-12-15T22:17:02.367Z",
+  "generatedAt": "2025-12-15T22:47:20.713Z",
   "tours": [
     {
       "id": "highlights",
@@ -687,6 +687,1478 @@
           "department": "Greek and Roman Art",
           "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DP138718.jpg",
           "isHighlight": false
+        }
+      ]
+    },
+    {
+      "id": "dept-1",
+      "name": "American Decorative Arts",
+      "description": "Furniture, silver, ceramics, and decorative arts from colonial America to the early 20th century",
+      "icon": "🏺",
+      "objectCount": 13,
+      "objects": [
+        {
+          "objectID": 200,
+          "title": "Spindle-back armchair",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "1640–80",
+          "department": "The American Wing",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/DT163.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 1662,
+          "title": "Side Chair",
+          "artistDisplayName": "Benjamin Randolph",
+          "artistDisplayBio": "American, 1737–1792",
+          "objectDate": "ca. 1769",
+          "department": "The American Wing",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/DP-15536-001.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 1083,
+          "title": "Cabinet",
+          "artistDisplayName": "Daniel Pabst",
+          "artistDisplayBio": "American, born Germany 1826–1910 Philadelphia, Pennsylvania",
+          "objectDate": "ca. 1873–76",
+          "department": "The American Wing",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/DT180.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 632,
+          "title": "Bottle",
+          "artistDisplayName": "Wistarburgh Glassworks",
+          "artistDisplayBio": null,
+          "objectDate": "1738–ca. 1777",
+          "department": "The American Wing",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/DP207183.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 802,
+          "title": "Two-handled Bowl",
+          "artistDisplayName": "Cornelius Kierstede",
+          "artistDisplayBio": "1674–ca. 1757",
+          "objectDate": "1700–1710",
+          "department": "The American Wing",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/DP104414.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 10159,
+          "title": "Fur Traders Descending the Missouri",
+          "artistDisplayName": "George Caleb Bingham",
+          "artistDisplayBio": "American, Augusta County, Virginia 1811–1879 Kansas City, Missouri",
+          "objectDate": "1845",
+          "department": "The American Wing",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/DT73.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 6861,
+          "title": "Revolving Chair",
+          "artistDisplayName": "United Society of Believers in Christ’s Second Appearing (“Shakers”)",
+          "artistDisplayBio": "American, active ca. 1750–present",
+          "objectDate": "1840–70",
+          "department": "The American Wing",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/DP232769.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 8288,
+          "title": "Tea Urn",
+          "artistDisplayName": "Paul Revere Jr.",
+          "artistDisplayBio": "American, Boston, Massachusetts 1734–1818 Boston, Massachusetts",
+          "objectDate": "1791",
+          "department": "The American Wing",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/DP208084.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 6635,
+          "title": "Pocket bottle",
+          "artistDisplayName": "American Flint Glass Manufactory",
+          "artistDisplayBio": "1764–1774",
+          "objectDate": "1769–74",
+          "department": "The American Wing",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/DT186.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 7212,
+          "title": "Sauceboat",
+          "artistDisplayName": "Anthony Rasch",
+          "artistDisplayBio": "ca. 1778–1858",
+          "objectDate": "ca. 1815",
+          "department": "The American Wing",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/DT5061.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 9480,
+          "title": "Vase",
+          "artistDisplayName": "Louis C. Tiffany",
+          "artistDisplayBio": "American, New York 1848–1933 New York",
+          "objectDate": "1893–96",
+          "department": "The American Wing",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/DT190.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 10497,
+          "title": "View from Mount Holyoke, Northampton, Massachusetts, after a Thunderstorm—The Oxbow",
+          "artistDisplayName": "Thomas Cole",
+          "artistDisplayBio": "American, Lancashire 1801–1848 Catskill, New York",
+          "objectDate": "1836",
+          "department": "The American Wing",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/DP-12550-001.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 7874,
+          "title": "Jubal and Miriam",
+          "artistDisplayName": "William Jay Bolton",
+          "artistDisplayBio": "British, 1816–1884",
+          "objectDate": "1843–48",
+          "department": "The American Wing",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/DP214425.jpg",
+          "isHighlight": true
+        }
+      ]
+    },
+    {
+      "id": "dept-3",
+      "name": "Ancient West Asian Art",
+      "description": "Artifacts from Mesopotamia, Anatolia, and the ancient Near East",
+      "icon": "🏛️",
+      "objectCount": 30,
+      "objects": [
+        {
+          "objectID": 324111,
+          "title": "Fragment of a bowl with a frieze of bulls in relief",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 3300–2900 BCE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DP-41767-001.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 322483,
+          "title": "Vase with overlapping pattern and three bands of palm trees",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. mid- to late 3rd millennium BCE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DT855.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 322499,
+          "title": "Belt clasp",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 1st–2nd century CE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DT901.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 322375,
+          "title": "Funerary relief",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 2nd–3rd century CE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DP-13078-001.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 322443,
+          "title": "Sickle sword",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 1307–1275 BCE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DP239582.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 322114,
+          "title": "Figure of a reclining woman",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 2nd century BCE–2nd century CE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DP-15732-009.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 322889,
+          "title": "Enthroned deity",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 14th–13th century BCE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DP137934.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 325511,
+          "title": "Cup with a frieze of gazelles",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. early 1st millennium BCE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DP-19846-002.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 324155,
+          "title": "Eye idol",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 3700–3500 BCE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DP224749.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 327104,
+          "title": "Royal or divine figure with high conical headdress",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 18th–17th century BCE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/an1985.262.2.R.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 324158,
+          "title": "Standing man",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 2nd century CE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DT910.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 322890,
+          "title": "Furniture support: female sphinx with Hathor-style curls",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 18th century BCE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DP110463.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 324008,
+          "title": "Orthostat relief: lion-hunt scene",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 10th−9th century BCE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DP-16679-001.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 324290,
+          "title": "Plaque with horned lion-griffins",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 6th–4th century BCE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DT896.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 325584,
+          "title": "Helmet with divine figures beneath a bird with outstretched wings",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 1500–1100 BCE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DT874.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 323178,
+          "title": "Relief: two servants bearing food and drink",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 358–338 BCE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DP226593.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 324739,
+          "title": "Openwork furniture plaque with a grazing oryx in a forest of fronds",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 9th–8th century BCE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DP110622.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 322903,
+          "title": "Headdress",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 2600–2500 BCE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DP226592.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 322611,
+          "title": "Relief panel",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 883–859 BCE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DP375420.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 325562,
+          "title": "Furniture element carved in the round with the head of a roaring lion",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 9th–8th century BCE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DP110686.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 326243,
+          "title": "Open bowl",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 1st century BCE–1st century CE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DT904.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 324075,
+          "title": "Incense burner",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. mid-1st millennium BCE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DT893.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 326655,
+          "title": "Head of a ram",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 3500–3100 BCE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/an1981.53.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 325089,
+          "title": "Figure of a man with an oryx, a monkey, and a leopard skin",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 8th century BCE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DP110672.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 327066,
+          "title": "Seated female",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 5600–5000 BCE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DT844.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 324492,
+          "title": "Spout in the form of a man's head",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 1st–2nd century CE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DT911.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 324917,
+          "title": "Storage jar decorated with mountain goats",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 4000–3600 BCE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DT845.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 322585,
+          "title": "Panel with striding lion",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 604–562 BCE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DT891.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 325005,
+          "title": "Spouted jar",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 9th century BCE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DP-19789-002.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 326623,
+          "title": "Rhyton terminating in the forepart of a wild cat",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 1st century BCE",
+          "department": "Ancient West Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/an/web-large/DT905.jpg",
+          "isHighlight": true
+        }
+      ]
+    },
+    {
+      "id": "dept-4",
+      "name": "Arms and Armor",
+      "description": "Weapons, armor, and military equipment from around the world",
+      "icon": "⚔️",
+      "objectCount": 25,
+      "objects": [
+        {
+          "objectID": 24014,
+          "title": "Helmet (<i>Zukinnari Kabuto</i>)",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "16th century",
+          "department": "Arms and Armor",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/aa/web-large/DT306016.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 22631,
+          "title": "Congressional Presentation Sword with Scabbard of Colonel Marinus Willett (1740–1830)",
+          "artistDisplayName": "C. Liger",
+          "artistDisplayBio": "French, Paris, recorded 1770–93",
+          "objectDate": "hallmarked for 1785–86",
+          "department": "Arms and Armor",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/aa/web-large/DT766.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 22914,
+          "title": "Hunting Sword with Scabbard",
+          "artistDisplayName": "Joseph Deutschmann",
+          "artistDisplayBio": "German, Imst 1717–1787 Passau",
+          "objectDate": "ca. 1740",
+          "department": "Arms and Armor",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/aa/web-large/DT775.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 35692,
+          "title": "Helmet (<i>Spangenhelm</i>)",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "6th century",
+          "department": "Arms and Armor",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/aa/web-large/DP-18980-001.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 35650,
+          "title": "Congressional Presentation Sword and Scabbard of Major General John E. Wool (1784–1869)",
+          "artistDisplayName": "Samuel Jackson",
+          "artistDisplayBio": "American, Baltimore, active 1833–70",
+          "objectDate": "1854–55",
+          "department": "Arms and Armor",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/aa/web-large/DP237837.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 24623,
+          "title": "Sword Guard (Tsuba)",
+          "artistDisplayName": "Ishiguro Masayoshi",
+          "artistDisplayBio": "Japanese, 1772–after 1851",
+          "objectDate": "19th century",
+          "department": "Arms and Armor",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/aa/web-large/LC-36_120_79-002.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 24975,
+          "title": "Armor (<i>Gusoku</i>)",
+          "artistDisplayName": "Bamen Tomotsugu",
+          "artistDisplayBio": "Japanese, Echizen province, Toyohara, active 18th century",
+          "objectDate": "18th century",
+          "department": "Arms and Armor",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/aa/web-large/DT5334.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 22769,
+          "title": "Presentation Sword and Scabbard of Brigadier General Daniel Davis (1777–1814) of the New York Militia",
+          "artistDisplayName": "John Targee",
+          "artistDisplayBio": "American, ca. 1774–1850",
+          "objectDate": "ca. 1815–17",
+          "department": "Arms and Armor",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/aa/web-large/DT751.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 22739,
+          "title": "Mask",
+          "artistDisplayName": "Myōchin Muneakira",
+          "artistDisplayBio": "Japanese, Edo period, 1673–1745",
+          "objectDate": "dated 1745",
+          "department": "Arms and Armor",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/aa/web-large/LC-19_115_2-002.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 23205,
+          "title": "Armor",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 1400–1450 and later",
+          "department": "Arms and Armor",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/aa/web-large/LC-29_154_3-001.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 24957,
+          "title": "Double-Barrel Breech-Loading Pinfire Shotgun",
+          "artistDisplayName": "J. C. A. Brun",
+          "artistDisplayBio": "French, Paris, active 1849–72",
+          "objectDate": "dated 1866",
+          "department": "Arms and Armor",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/aa/web-large/DT3634.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 22932,
+          "title": "Presentation Smallsword with Scabbard",
+          "artistDisplayName": "James Morisset",
+          "artistDisplayBio": "British, London 1738–1815",
+          "objectDate": "hallmarked for 1797–98",
+          "department": "Arms and Armor",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/aa/web-large/LC-26_145_315a-002.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 24907,
+          "title": "Dagger with Scabbard",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "1605–27",
+          "department": "Arms and Armor",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/aa/web-large/DP157706.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 24681,
+          "title": "Flintlock Longrifle",
+          "artistDisplayName": "Jacob Kuntz",
+          "artistDisplayBio": "American, Allentown, Pennsylvania 1780–1876 Philadelphia, Pennsylvania",
+          "objectDate": "ca. 1810–20",
+          "department": "Arms and Armor",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/aa/web-large/LC-42_22-002.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 24865,
+          "title": "Flintlock Gun of Louis XIII (1601–1643), King of France",
+          "artistDisplayName": "Pierre Le Bourgeois",
+          "artistDisplayBio": "French, Lisieux, died 1627",
+          "objectDate": "ca. 1620",
+          "department": "Arms and Armor",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/aa/web-large/DT11038.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 24931,
+          "title": "Costume Armor in the Classical Style",
+          "artistDisplayName": "Hallé",
+          "artistDisplayBio": "French, Paris, active ca. 1780–1800",
+          "objectDate": "ca. 1788–90",
+          "department": "Arms and Armor",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/aa/web-large/DT5896.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 24320,
+          "title": "Saber",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "1522–66",
+          "department": "Arms and Armor",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/aa/web-large/DP160333.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 24861,
+          "title": "Cased Set of a Flintlock Rifle, a Pair of Pistols, and Accessories",
+          "artistDisplayName": "Nicolas Noël Boutet",
+          "artistDisplayBio": "French, Versailles and Paris, 1761–1833",
+          "objectDate": "ca. 1800",
+          "department": "Arms and Armor",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/aa/web-large/DP271137.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 22876,
+          "title": "Shield for the Field or Tournament (Targe)",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 1450",
+          "department": "Arms and Armor",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/aa/web-large/DT768.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 25111,
+          "title": "Album of Tournaments and Parades in Nuremberg",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "late 16th–mid-17th century",
+          "department": "Arms and Armor",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/aa/web-large/DT770.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 24937,
+          "title": "Armor of Infante Luis, Prince of Asturias (1707–1724)",
+          "artistDisplayName": "Jean Drouart",
+          "artistDisplayBio": "French, Paris, died before October 1715",
+          "objectDate": "dated 1712",
+          "department": "Arms and Armor",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/aa/web-large/DP-38098-003.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 24693,
+          "title": "Shield",
+          "artistDisplayName": "Girolamo da Treviso",
+          "artistDisplayBio": "Italian, Treviso ca. 1498–1544 Boulogne-sur-Mer",
+          "objectDate": "ca. 1535",
+          "department": "Arms and Armor",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/aa/web-large/LC-42_50_16-030.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 24813,
+          "title": "Helmet with Aventail",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "late 15th–16th century",
+          "department": "Arms and Armor",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/aa/web-large/DP152928.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 23216,
+          "title": "Helm for the Joust of Peace (<i>Stechhelm</i>)",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 1500",
+          "department": "Arms and Armor",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/aa/web-large/DP271142.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 22387,
+          "title": "Double-Barreled Wheellock Pistol Made for Emperor Charles V (reigned 1519–56)",
+          "artistDisplayName": "Peter Peck",
+          "artistDisplayBio": "German, Munich, 1503–1596",
+          "objectDate": "ca. 1540–45",
+          "department": "Arms and Armor",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/aa/web-large/DT772.jpg",
+          "isHighlight": true
+        }
+      ]
+    },
+    {
+      "id": "dept-9",
+      "name": "Drawings and Prints",
+      "description": "Works on paper including prints, drawings, and illustrated books",
+      "icon": "✏️",
+      "objectCount": 15,
+      "objects": [
+        {
+          "objectID": 337088,
+          "title": "Portrait of Alain de Coëtivy (1407–1474)",
+          "artistDisplayName": "Jean Fouquet",
+          "artistDisplayBio": "French, Tours ca. 1425–ca. 1478 Tours",
+          "objectDate": "ca. 1451–55",
+          "department": "Drawings and Prints",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP832656_ff.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 682931,
+          "title": "Weymouth Bay",
+          "artistDisplayName": "David Lucas",
+          "artistDisplayBio": "British, Geddington Chase, Northamptonshire 1802–1881 London",
+          "objectDate": "1830",
+          "department": "Drawings and Prints",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP875019.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 654264,
+          "title": "Presentation Drawing of \"The Statue of Liberty Illuminating the World\"",
+          "artistDisplayName": "Frédéric-Auguste Bartholdi",
+          "artistDisplayBio": "French, Colmar 1834–1904 Paris",
+          "objectDate": "1875",
+          "department": "Drawings and Prints",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP-19731-001.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 908466,
+          "title": "A tulip, a butterfly of the species Arctia caja (garden tiger moth), and a beetle (possibly a longhorn)",
+          "artistDisplayName": "Barbara Regina Dietzsch",
+          "artistDisplayBio": "German, Nuremberg 1706–1783 Nuremberg",
+          "objectDate": "ca. 1750-60",
+          "department": "Drawings and Prints",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP-34790-001.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 337700,
+          "title": "Hercules chasing Avarice from the Temple of the Muses",
+          "artistDisplayName": "Ugo da Carpi",
+          "artistDisplayBio": "Italian, Carpi ca. 1480–1532 Bologna",
+          "objectDate": "ca. 1520–27",
+          "department": "Drawings and Prints",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP880858.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 382608,
+          "title": "Still Life with Flowers, a Snail and Insects",
+          "artistDisplayName": "Joris Hoefnagel",
+          "artistDisplayBio": "Netherlandish, Antwerp 1542–1600 Vienna",
+          "objectDate": "1589",
+          "department": "Drawings and Prints",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP158476.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 337058,
+          "title": "The Judgment of Paris: he is sitting at left with Venus, Juno and Pallas Athena, a winged victory above. In the upper section the Sun in his chariot preceeded by Castor and Pollux on horseback, at lower right two river gods and a naiad above whom Jupiter, an eagle, Ganymede, Diana and another goddess",
+          "artistDisplayName": "Marcantonio Raimondi",
+          "artistDisplayBio": "Italian, Argini (?) ca. 1480–before 1534 Bologna (?)",
+          "objectDate": "ca. 1510–20",
+          "department": "Drawings and Prints",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP-18212-001.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 336162,
+          "title": "Christ Carrying the Cross",
+          "artistDisplayName": "Martin Schongauer",
+          "artistDisplayBio": "German, Colmar ca. 1435/50–1491 Breisach",
+          "objectDate": "ca. 1475–80",
+          "department": "Drawings and Prints",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP820028.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 337071,
+          "title": "Pink and Rose",
+          "artistDisplayName": "William Morris",
+          "artistDisplayBio": "British, Walthamstow, London 1834–1896 Hammersmith, London",
+          "objectDate": "ca. 1890",
+          "department": "Drawings and Prints",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/dp23.163.4a.R.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 337172,
+          "title": "Tahitian Faces (Frontal View and Profiles)",
+          "artistDisplayName": "Paul Gauguin",
+          "artistDisplayBio": "French, Paris 1848–1903 Atuona, Hiva Oa, Marquesas Islands",
+          "objectDate": "ca. 1899",
+          "department": "Drawings and Prints",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DT641.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 333813,
+          "title": "Édouard Manet, Seated, Holding His Hat",
+          "artistDisplayName": "Edgar Degas",
+          "artistDisplayBio": "French, Paris 1834–1917 Paris",
+          "objectDate": "ca. 1868",
+          "department": "Drawings and Prints",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP805813.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 333990,
+          "title": "Moulin Rouge: La Goulue",
+          "artistDisplayName": "Henri de Toulouse-Lautrec",
+          "artistDisplayBio": "French, Albi 1864–1901 Saint-André-du-Bois",
+          "objectDate": "1891",
+          "department": "Drawings and Prints",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DT11780.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 337491,
+          "title": "Cottage among Trees",
+          "artistDisplayName": "Rembrandt (Rembrandt van Rijn)",
+          "artistDisplayBio": "Dutch, Leiden 1606–1669 Amsterdam",
+          "objectDate": "ca. 1650",
+          "department": "Drawings and Prints",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP832659.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 335663,
+          "title": "Youth Playing a Pipe for a Satyr",
+          "artistDisplayName": "Giovanni Benedetto Castiglione (Il Grechetto)",
+          "artistDisplayBio": "Italian, Genoa 1609–1664 Mantua",
+          "objectDate": "1645–50",
+          "department": "Drawings and Prints",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP820249.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 336046,
+          "title": "Saada, the Wife of Abraham Ben-Chimol, and Préciada, One of Their Daughters",
+          "artistDisplayName": "Eugène Delacroix",
+          "artistDisplayBio": "French, Charenton-Saint-Maurice 1798–1863 Paris",
+          "objectDate": "1832",
+          "department": "Drawings and Prints",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP837212.jpg",
+          "isHighlight": true
+        }
+      ]
+    },
+    {
+      "id": "dept-12",
+      "name": "European Sculpture and Decorative Arts",
+      "description": "Sculpture, furniture, ceramics, and metalwork from Renaissance to early modern Europe",
+      "icon": "🗿",
+      "objectCount": 12,
+      "objects": [
+        {
+          "objectID": 229770,
+          "title": "Hunting and fishing scenes",
+          "artistDisplayName": "Robert Jones",
+          "artistDisplayBio": null,
+          "objectDate": "1769",
+          "department": "European Sculpture and Decorative Arts",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/es/web-large/DT818.jpg",
+          "isHighlight": false
+        },
+        {
+          "objectID": 229936,
+          "title": "Quilt",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "1820–50",
+          "department": "European Sculpture and Decorative Arts",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/es/web-large/DT819.jpg",
+          "isHighlight": false
+        },
+        {
+          "objectID": 230011,
+          "title": "The Triumph of Fame",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 1502–4",
+          "department": "European Sculpture and Decorative Arts",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/es/web-large/DT4292.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 207754,
+          "title": "Spoon holder",
+          "artistDisplayName": "Christopher Dresser",
+          "artistDisplayBio": "British, Glasgow, Scotland 1834–1904 Mulhouse",
+          "objectDate": "ca. 1878–81",
+          "department": "European Sculpture and Decorative Arts",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/es/web-large/DP-16078-047.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 206587,
+          "title": "Rosewater ewer",
+          "artistDisplayName": "Johann Erhard Heiglen",
+          "artistDisplayBio": "German, before 1687–1757",
+          "objectDate": "ca. 1730",
+          "department": "European Sculpture and Decorative Arts",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/es/web-large/DT581.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 200668,
+          "title": "Sabine Houdon (1787–1836)",
+          "artistDisplayName": "Jean Antoine Houdon",
+          "artistDisplayBio": "French, Versailles 1741–1828 Paris",
+          "objectDate": "1788",
+          "department": "European Sculpture and Decorative Arts",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/es/web-large/DP242660.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 209028,
+          "title": "Monteith with the Gibbs and Nelthorpe coats of arms",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "1700",
+          "department": "European Sculpture and Decorative Arts",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/es/web-large/DP-17308-019.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 195223,
+          "title": "Display dish with Charles II (1630–1685) in a tree",
+          "artistDisplayName": "Thomas Toft",
+          "artistDisplayBio": "active before 1663–died 1689",
+          "objectDate": "ca. 1680",
+          "department": "European Sculpture and Decorative Arts",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/es/web-large/DP-15518-013.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 196910,
+          "title": "Dining room from Lansdowne House",
+          "artistDisplayName": "Robert Adam",
+          "artistDisplayBio": "British, Kirkcaldy, Scotland 1728–1792 London",
+          "objectDate": "1766–69",
+          "department": "European Sculpture and Decorative Arts",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/es/web-large/DP-19162-024-JPG_TMS_4000px_300dpi.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 204533,
+          "title": "Plate",
+          "artistDisplayName": "Imperial Porcelain Manufactory, St. Petersburg",
+          "artistDisplayBio": "Russian, 1744–present",
+          "objectDate": "1755–60",
+          "department": "European Sculpture and Decorative Arts",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/es/web-large/es65.47.R.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 204758,
+          "title": "Perseus with the Head of Medusa",
+          "artistDisplayName": "Antonio Canova",
+          "artistDisplayBio": "Italian, Possagno 1757–1822 Venice",
+          "objectDate": "1804–6",
+          "department": "European Sculpture and Decorative Arts",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/es/web-large/DP249451.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 211486,
+          "title": "Marsyas",
+          "artistDisplayName": "Balthasar Permoser",
+          "artistDisplayBio": "German, Kammer, near Otting, Chiemgau, Bavaria 1651–1732 Dresden",
+          "objectDate": "ca. 1680–85",
+          "department": "European Sculpture and Decorative Arts",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/es/web-large/DP228780.jpg",
+          "isHighlight": true
+        }
+      ]
+    },
+    {
+      "id": "dept-13",
+      "name": "Greek and Roman Art",
+      "description": "Art from ancient Greece and Rome, including sculpture, pottery, and jewelry",
+      "icon": "🏛️",
+      "objectCount": 23,
+      "objects": [
+        {
+          "objectID": 247117,
+          "title": "Bronze statue of the emperor Trebonianus Gallus",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "251–253 CE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DP138716.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 247173,
+          "title": "Marble statue of Eirene (the personification of peace)",
+          "artistDisplayName": "Kephisodotos",
+          "artistDisplayBio": null,
+          "objectDate": "ca. 14–68 CE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DT11659.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 251428,
+          "title": "Terracotta head of a woman",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "3rd–2nd century BCE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DP116958.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 251838,
+          "title": "Fragments of a marble statue of the Diadoumenos (youth tying a fillet around his head)",
+          "artistDisplayName": "Polykleitos",
+          "artistDisplayBio": null,
+          "objectDate": "ca. 69–96 CE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DT11982.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 249414,
+          "title": "Glass oinochoe (jug)",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "late 1st century BCE–early 1st century CE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DT203394.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 254597,
+          "title": "Marble stele (grave marker) of a woman",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "mid-4th century BCE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DT11995.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 254801,
+          "title": "Terracotta funerary plaque",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 520–510 BCE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DT200607.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 247008,
+          "title": "Wall painting from the west wall of Room L of the Villa of P. Fannius Synistor at Boscoreale",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 50–40 BCE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DP141474.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 249186,
+          "title": "Ivory decorative plaque",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "2nd half of 7th century BCE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DP-23251-001.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 248876,
+          "title": "Agate Lentoid",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 1450–1400 BCE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DT224148.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 250945,
+          "title": "Wall painting: Perseus and Andromeda in landscape, from the imperial villa at Boscotrecase",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "last decade of the 1st century BCE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DP138761.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 253505,
+          "title": "Marble grave stele of a young woman and servant",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 400–390 BCE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DT11989.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 248132,
+          "title": "Marble statue of an old woman",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "14–68 CE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DP277237.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 254589,
+          "title": "Terracotta head of a woman, probably a sphinx",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "1st quarter of the 5th century BCE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DP119149.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 254478,
+          "title": "Lion felling a bull, from a marble pediment",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 525–500 BCE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DT5090.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 253566,
+          "title": "Fragment of the marble stele (grave marker) of a hoplite (foot soldier)",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 525–515 BCE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DP-23264-001.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 252452,
+          "title": "Bronze hydria (water jar)",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "mid-5th century BCE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DT275.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 252973,
+          "title": "Terracotta bell-krater (bowl for mixing wine and water)",
+          "artistDisplayName": "Persephone Painter",
+          "artistDisplayBio": null,
+          "objectDate": "ca. 440 BCE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DP116943.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 248891,
+          "title": "Bronze statue of an aristocratic boy",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "27 BCE–14 CE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DP345062.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 245787,
+          "title": "Glass garland bowl",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "late 1st century BCE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DP122006.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 251476,
+          "title": "Marble head and torso of Athena",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "1st–2nd century CE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DP357289.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 248644,
+          "title": "Marble funerary lekythos",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 375–350 BCE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DP-23255-001.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 254819,
+          "title": "Marble sarcophagus with the Triumph of Dionysos and the Seasons",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 260–270 CE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DP-14287-144.jpg",
+          "isHighlight": true
+        }
+      ]
+    },
+    {
+      "id": "dept-18",
+      "name": "Musical Instruments",
+      "description": "Musical instruments from around the world and across history",
+      "icon": "🎹",
+      "objectCount": 15,
+      "objects": [
+        {
+          "objectID": 503615,
+          "title": "Bassoon",
+          "artistDisplayName": "Giosue Esposito",
+          "artistDisplayBio": "Naples, active late 19th century",
+          "objectDate": "1881",
+          "department": "Musical Instruments",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/mi/web-large/DP218094.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 506724,
+          "title": "Clarinet in D",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "1750–70",
+          "department": "Musical Instruments",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/mi/web-large/DP232753.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 503502,
+          "title": "Accordion",
+          "artistDisplayName": "Alexandre Pere & Fils",
+          "artistDisplayBio": null,
+          "objectDate": "1850–55",
+          "department": "Musical Instruments",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/mi/web-large/DP105215.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 503930,
+          "title": "Guitar",
+          "artistDisplayName": "Jean-Baptiste Voboam",
+          "artistDisplayBio": null,
+          "objectDate": "1697",
+          "department": "Musical Instruments",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/mi/web-large/DT1108a.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 503348,
+          "title": "Dung-Chen",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "1368–1644",
+          "department": "Musical Instruments",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/mi/web-large/mi1988.349.R.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 503546,
+          "title": "Cornet à Pistons in B-flat",
+          "artistDisplayName": "Courtois frères",
+          "artistDisplayBio": null,
+          "objectDate": "1833",
+          "department": "Musical Instruments",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/mi/web-large/DT5396.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 503677,
+          "title": "Grand Piano",
+          "artistDisplayName": "Ferdinand Hofmann",
+          "artistDisplayBio": "Austrian, 1756–1829 Vienna",
+          "objectDate": "ca. 1790",
+          "department": "Musical Instruments",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/mi/web-large/DT687a.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 504284,
+          "title": "English Horn",
+          "artistDisplayName": "H. Grenser",
+          "artistDisplayBio": null,
+          "objectDate": "before 1807",
+          "department": "Musical Instruments",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/mi/web-large/DP218075.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 503008,
+          "title": "\"Antonius\" Violin",
+          "artistDisplayName": "Antonio Stradivari",
+          "artistDisplayBio": "Italian, Cremona 1644–1737 Cremona",
+          "objectDate": "1711",
+          "department": "Musical Instruments",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/mi/web-large/DP105130.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 503505,
+          "title": "Lyre Guitar",
+          "artistDisplayName": "Joseph Pons",
+          "artistDisplayBio": "French, born 1776",
+          "objectDate": "ca. 1805",
+          "department": "Musical Instruments",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/mi/web-large/DP105342.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 501536,
+          "title": "Ennanga",
+          "artistDisplayName": "Ganda",
+          "artistDisplayBio": null,
+          "objectDate": "19th century",
+          "department": "Musical Instruments",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/mi/web-large/mi89.4.926.AV1.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 501534,
+          "title": "Transverse Flute in D-flat",
+          "artistDisplayName": "Claude Laurent",
+          "artistDisplayBio": "French, Langres active 1805–1848 Paris",
+          "objectDate": "1813",
+          "department": "Musical Instruments",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/mi/web-large/DT661.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 501523,
+          "title": "Soprano Recorder in B",
+          "artistDisplayName": "Thomas Coenraet Boekhout",
+          "artistDisplayBio": "Kampen 1666–1715 Amsterdam",
+          "objectDate": "ca. 1700",
+          "department": "Musical Instruments",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/mi/web-large/DP105123.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 500736,
+          "title": "Ghanti (bell)",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "last half 19th century",
+          "department": "Musical Instruments",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/mi/web-large/mi89.4.154.R.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 503971,
+          "title": "Natural Trumpet",
+          "artistDisplayName": "Johann Wilhelm Haas",
+          "artistDisplayBio": "German, Nuremberg 1649–1723 Nuremberg",
+          "objectDate": "late 17th century",
+          "department": "Musical Instruments",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/mi/web-large/DP220760.jpg",
+          "isHighlight": true
+        }
+      ]
+    },
+    {
+      "id": "dept-19",
+      "name": "Photographs",
+      "description": "Photographs from the invention of the medium to the present",
+      "icon": "📷",
+      "objectCount": 7,
+      "objects": [
+        {
+          "objectID": 266284,
+          "title": "[Large Figures on the North Porch, Chartres Cathedral]",
+          "artistDisplayName": "Henri-Jean-Louis Le Secq",
+          "artistDisplayBio": "French, Paris 1818–1882 Paris",
+          "objectDate": "1852",
+          "department": "Photographs",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ph/web-large/DT1159.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 262612,
+          "title": "View on the Columbia, Cascades",
+          "artistDisplayName": "Carleton E. Watkins",
+          "artistDisplayBio": "American, 1829–1916",
+          "objectDate": "1867",
+          "department": "Photographs",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ph/web-large/DT1173.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 271963,
+          "title": "Romesnil",
+          "artistDisplayName": "Louis-Rémy Robert",
+          "artistDisplayBio": "French, 1810–1882",
+          "objectDate": "1850–55",
+          "department": "Photographs",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ph/web-large/DT4051.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 282051,
+          "title": "[Two Standing Female Nudes]",
+          "artistDisplayName": "Félix-Jacques-Antoine Moulin",
+          "artistDisplayBio": "French, 1800–after 1875",
+          "objectDate": "ca. 1850",
+          "department": "Photographs",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ph/web-large/DT1154.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 282039,
+          "title": "[Reclining Odalisque]",
+          "artistDisplayName": "Roger Fenton",
+          "artistDisplayBio": "British, 1819–1869",
+          "objectDate": "1858",
+          "department": "Photographs",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ph/web-large/DP107952.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 282163,
+          "title": "Saint-Maclou, Rouen",
+          "artistDisplayName": "Edmond Bacot",
+          "artistDisplayBio": "French, 1814–1875",
+          "objectDate": "1852–54",
+          "department": "Photographs",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ph/web-large/DP139284.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 267087,
+          "title": "[Landscape with Cottage]",
+          "artistDisplayName": "Marie-Charles-Isidore Choiselat",
+          "artistDisplayBio": "French, 1815–1858",
+          "objectDate": "1844",
+          "department": "Photographs",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ph/web-large/DT1150.jpg",
+          "isHighlight": true
         }
       ]
     }
