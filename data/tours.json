@@ -1,0 +1,694 @@
+{
+  "generatedAt": "2025-12-15T22:17:02.367Z",
+  "tours": [
+    {
+      "id": "highlights",
+      "name": "Museum Highlights",
+      "description": "Hand-picked masterpieces spanning European paintings, American art, sculpture, medieval treasures, Asian art, and ancient artifacts",
+      "icon": "⭐",
+      "objectCount": 68,
+      "objects": [
+        {
+          "objectID": 547802,
+          "title": "The Temple of Dendur",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "completed by 10 B.C.",
+          "department": "Egyptian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/eg/web-large/DP240337.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 11417,
+          "title": "Washington Crossing the Delaware",
+          "artistDisplayName": "Emanuel Leutze",
+          "artistDisplayBio": "American, Schwäbisch Gmünd 1816–1868 Washington, D.C.",
+          "objectDate": "1851",
+          "department": "The American Wing",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/DP215410.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 437394,
+          "title": "Aristotle with a Bust of Homer",
+          "artistDisplayName": "Rembrandt (Rembrandt van Rijn)",
+          "artistDisplayBio": "Dutch, Leiden 1606–1669 Amsterdam",
+          "objectDate": "1653",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-30758-001.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 436105,
+          "title": "The Death of Socrates",
+          "artistDisplayName": "Jacques Louis David",
+          "artistDisplayBio": "French, Paris 1748–1825 Brussels",
+          "objectDate": "1787",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-13139-001.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 435621,
+          "title": "Joan of Arc",
+          "artistDisplayName": "Jules Bastien-Lepage",
+          "artistDisplayBio": "French, Damvillers 1848–1884 Paris",
+          "objectDate": "1879",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-14201-049.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 436532,
+          "title": "Self-Portrait with a Straw Hat (obverse: The Potato Peeler)",
+          "artistDisplayName": "Vincent van Gogh",
+          "artistDisplayBio": "Dutch, Zundert 1853–1890 Auvers-sur-Oise",
+          "objectDate": "1887",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DT1502_cropped2.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 436535,
+          "title": "Wheat Field with Cypresses",
+          "artistDisplayName": "Vincent van Gogh",
+          "artistDisplayBio": "Dutch, Zundert 1853–1890 Auvers-sur-Oise",
+          "objectDate": "1889",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-42549-001.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 11122,
+          "title": "The Gulf Stream",
+          "artistDisplayName": "Winslow Homer",
+          "artistDisplayBio": "American, Boston, Massachusetts 1836–1910 Prouts Neck, Maine",
+          "objectDate": "1899; reworked by 1906",
+          "department": "The American Wing",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/DP-20821-001.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 435868,
+          "title": "The Card Players",
+          "artistDisplayName": "Paul Cézanne",
+          "artistDisplayBio": "French, Aix-en-Provence 1839–1906 Aix-en-Provence",
+          "objectDate": "1890–92",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DP231550.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 437881,
+          "title": "Young Woman with a Water Pitcher",
+          "artistDisplayName": "Johannes Vermeer",
+          "artistDisplayBio": "Dutch, Delft 1632–1675 Delft",
+          "objectDate": "ca. 1662",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DP353257.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 437878,
+          "title": "A Maid Asleep",
+          "artistDisplayName": "Johannes Vermeer",
+          "artistDisplayBio": "Dutch, Delft 1632–1675 Delft",
+          "objectDate": "ca. 1656–57",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DP355525.jpg",
+          "isHighlight": false
+        },
+        {
+          "objectID": 437877,
+          "title": "Allegory of the Catholic Faith",
+          "artistDisplayName": "Johannes Vermeer",
+          "artistDisplayBio": "Dutch, Delft 1632–1675 Delft",
+          "objectDate": "ca. 1670–72",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DP145924.jpg",
+          "isHighlight": false
+        },
+        {
+          "objectID": 437879,
+          "title": "Study of a Young Woman",
+          "artistDisplayName": "Johannes Vermeer",
+          "artistDisplayBio": "Dutch, Delft 1632–1675 Delft",
+          "objectDate": "ca. 1665–67",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DP353256.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 435809,
+          "title": "The Harvesters",
+          "artistDisplayName": "Pieter Bruegel the Elder",
+          "artistDisplayBio": "Netherlandish, Breda (?) ca. 1525–1569 Brussels",
+          "objectDate": "1565",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DP119115.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 435802,
+          "title": "Portrait of a Young Man",
+          "artistDisplayName": "Bronzino (Agnolo di Cosimo di Mariano)",
+          "artistDisplayBio": "Italian, Monticelli 1503–1572 Florence",
+          "objectDate": "1530s",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-14286-011.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 435844,
+          "title": "The Musicians",
+          "artistDisplayName": "Caravaggio (Michelangelo Merisi)",
+          "artistDisplayBio": "Italian, Milan or Caravaggio 1571–1610 Porto Ercole",
+          "objectDate": "1597",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-687-001.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 437986,
+          "title": "The Denial of Saint Peter",
+          "artistDisplayName": "Caravaggio (Michelangelo Merisi)",
+          "artistDisplayBio": "Italian, Milan or Caravaggio 1571–1610 Porto Ercole",
+          "objectDate": "1610",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-12413-001.jpg",
+          "isHighlight": false
+        },
+        {
+          "objectID": 437869,
+          "title": "Juan de Pareja (ca. 1608–1670)",
+          "artistDisplayName": "Velázquez (Diego Rodríguez de Silva y Velázquez)",
+          "artistDisplayBio": "Spanish, Seville 1599–1660 Madrid",
+          "objectDate": "1650",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-14286-001.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 436575,
+          "title": "View of Toledo",
+          "artistDisplayName": "El Greco (Domenikos Theotokopoulos)",
+          "artistDisplayBio": "Greek, Iráklion (Candia) 1541–1614 Toledo",
+          "objectDate": "ca. 1599–1600",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DP349564.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 199313,
+          "title": "Portrait of Napoleon I",
+          "artistDisplayName": "baron François Gérard",
+          "artistDisplayBio": "French, Rome 1770–1837 Paris",
+          "objectDate": "designed 1805, woven 1808–11",
+          "department": "European Sculpture and Decorative Arts",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/es/web-large/DP-25866-001.jpg",
+          "isHighlight": false
+        },
+        {
+          "objectID": 436576,
+          "title": "The Vision of Saint John",
+          "artistDisplayName": "El Greco (Domenikos Theotokopoulos)",
+          "artistDisplayBio": "Greek, Iráklion (Candia) 1541–1614 Toledo",
+          "objectDate": "ca. 1608–14",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-17641-001.jpg",
+          "isHighlight": false
+        },
+        {
+          "objectID": 437393,
+          "title": "The Toilet of Bathsheba",
+          "artistDisplayName": "Rembrandt (Rembrandt van Rijn)",
+          "artistDisplayBio": "Dutch, Leiden 1606–1669 Amsterdam",
+          "objectDate": "1643",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DP145915.jpg",
+          "isHighlight": false
+        },
+        {
+          "objectID": 437392,
+          "title": "Herman Doomer (ca. 1595–1650)",
+          "artistDisplayName": "Rembrandt (Rembrandt van Rijn)",
+          "artistDisplayBio": "Dutch, Leiden 1606–1669 Amsterdam",
+          "objectDate": "1640",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DP145921.jpg",
+          "isHighlight": false
+        },
+        {
+          "objectID": 438817,
+          "title": "The Dance Class",
+          "artistDisplayName": "Edgar Degas",
+          "artistDisplayBio": "French, Paris 1834–1917 Paris",
+          "objectDate": "1874",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-20101-001.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 436121,
+          "title": "A Woman Seated beside a Vase of Flowers (Madame Paul Valpinçon?)",
+          "artistDisplayName": "Edgar Degas",
+          "artistDisplayBio": "French, Paris 1834–1917 Paris",
+          "objectDate": "1865",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-25460-001.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 436155,
+          "title": "The Rehearsal of the Ballet Onstage",
+          "artistDisplayName": "Edgar Degas",
+          "artistDisplayBio": "French, Paris 1834–1917 Paris",
+          "objectDate": "ca. 1874",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DT1565.jpg",
+          "isHighlight": false
+        },
+        {
+          "objectID": 436002,
+          "title": "Woman with a Parrot",
+          "artistDisplayName": "Gustave Courbet",
+          "artistDisplayBio": "French, Ornans 1819–1877 La Tour-de-Peilz",
+          "objectDate": "1866",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-17680-001.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 436944,
+          "title": "The Spanish Singer",
+          "artistDisplayName": "Edouard Manet",
+          "artistDisplayBio": "French, Paris 1832–1883 Paris",
+          "objectDate": "1860",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/dp130799.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 436896,
+          "title": "Portrait of a Woman with a Man at a Casement",
+          "artistDisplayName": "Fra Filippo Lippi",
+          "artistDisplayBio": "Italian, Florence ca. 1406–1469 Spoleto",
+          "objectDate": "ca. 1440",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DP159891.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 438821,
+          "title": "Ia Orana Maria (Hail Mary)",
+          "artistDisplayName": "Paul Gauguin",
+          "artistDisplayBio": "French, Paris 1848–1903 Atuona, Hiva Oa, Marquesas Islands",
+          "objectDate": "1891",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DT1025.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 436446,
+          "title": "Two Tahitian Women",
+          "artistDisplayName": "Paul Gauguin",
+          "artistDisplayBio": "French, Paris 1848–1903 Atuona, Hiva Oa, Marquesas Islands",
+          "objectDate": "1899",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DT1342.jpg",
+          "isHighlight": false
+        },
+        {
+          "objectID": 357387,
+          "title": "The Faerie Queene, A Poem in Six Books with the Fragment Mutabilitie: Book I",
+          "artistDisplayName": "Edmund Spenser",
+          "artistDisplayBio": "British, London 1552?–1599 London",
+          "objectDate": "1894–97",
+          "department": "Drawings and Prints",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP330597.jpg",
+          "isHighlight": false
+        },
+        {
+          "objectID": 13209,
+          "title": "Arrangement in Black, No. 3: Sir Henry Irving as Philip II of Spain",
+          "artistDisplayName": "James McNeill Whistler",
+          "artistDisplayBio": "American, Lowell, Massachusetts 1834–1903 London",
+          "objectDate": "1876, reworked 1885",
+          "department": "The American Wing",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/22V_163R4M.jpg",
+          "isHighlight": false
+        },
+        {
+          "objectID": 435882,
+          "title": "Still Life with Apples and a Pot of Primroses",
+          "artistDisplayName": "Paul Cézanne",
+          "artistDisplayBio": "French, Aix-en-Provence 1839–1906 Aix-en-Provence",
+          "objectDate": "ca. 1890",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DT47.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 10819,
+          "title": "The Champion Single Sculls (Max Schmitt in a Single Scull)",
+          "artistDisplayName": "Thomas Eakins",
+          "artistDisplayBio": "American, Philadelphia, Pennsylvania 1844–1916 Philadelphia, Pennsylvania",
+          "objectDate": "1871",
+          "department": "The American Wing",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/DT86.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 10154,
+          "title": "The Rocky Mountains, Lander's Peak",
+          "artistDisplayName": "Albert Bierstadt",
+          "artistDisplayBio": "American, Solingen 1830–1902 New York",
+          "objectDate": "1863",
+          "department": "The American Wing",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/DT82.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 10481,
+          "title": "Heart of the Andes",
+          "artistDisplayName": "Frederic Edwin Church",
+          "artistDisplayBio": "American, Hartford, Connecticut 1826–1900 New York",
+          "objectDate": "1859",
+          "department": "The American Wing",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/DT78.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 10159,
+          "title": "Fur Traders Descending the Missouri",
+          "artistDisplayName": "George Caleb Bingham",
+          "artistDisplayBio": "American, Augusta County, Virginia 1811–1879 Kansas City, Missouri",
+          "objectDate": "1845",
+          "department": "The American Wing",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/DT73.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 11140,
+          "title": "Snap the Whip",
+          "artistDisplayName": "Winslow Homer",
+          "artistDisplayBio": "American, Boston, Massachusetts 1836–1910 Prouts Neck, Maine",
+          "objectDate": "1872",
+          "department": "The American Wing",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/DP-20820-001.jpg",
+          "isHighlight": false
+        },
+        {
+          "objectID": 437941,
+          "title": "Lake Nemi and Genzano from the Terrace of the Capuchin Monastery",
+          "artistDisplayName": "Richard Wilson",
+          "artistDisplayBio": "British, Penegoes, Wales 1712/13–1782 Denbighshire, Wales",
+          "objectDate": "ca. 1756–57",
+          "department": "European Paintings",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DP169563.jpg",
+          "isHighlight": false
+        },
+        {
+          "objectID": 204758,
+          "title": "Perseus with the Head of Medusa",
+          "artistDisplayName": "Antonio Canova",
+          "artistDisplayBio": "Italian, Possagno 1757–1822 Venice",
+          "objectDate": "1804–6",
+          "department": "European Sculpture and Decorative Arts",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/es/web-large/DP249451.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 204812,
+          "title": "Ugolino and His Sons",
+          "artistDisplayName": "Jean-Baptiste Carpeaux",
+          "artistDisplayBio": "French, Valenciennes 1827–1875 Courbevoie",
+          "objectDate": "1865–67",
+          "department": "European Sculpture and Decorative Arts",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/es/web-large/DP247545.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 196439,
+          "title": "The Little Fourteen-Year-Old Dancer",
+          "artistDisplayName": "Edgar Degas",
+          "artistDisplayBio": "French, Paris 1834–1917 Paris",
+          "objectDate": "1922 (cast), 2018 (tutu)",
+          "department": "European Sculpture and Decorative Arts",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/es/web-large/DP-14939-002.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 10827,
+          "title": "The Thinker: Portrait of Louis N. Kenton",
+          "artistDisplayName": "Thomas Eakins",
+          "artistDisplayBio": "American, Philadelphia, Pennsylvania 1844–1916 Philadelphia, Pennsylvania",
+          "objectDate": "1900",
+          "department": "The American Wing",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/DT102.jpg",
+          "isHighlight": false
+        },
+        {
+          "objectID": 38108,
+          "title": "Bust of a Bodhisattva",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 4th–5th century",
+          "department": "Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/as/web-large/DP123382.jpg",
+          "isHighlight": false
+        },
+        {
+          "objectID": 24671,
+          "title": "Armor of Henry II, King of France (reigned 1547–59)",
+          "artistDisplayName": "Jean Cousin the Elder",
+          "artistDisplayBio": "French, Souci (?) ca. 1490–ca. 1560 Paris (?)",
+          "objectDate": "ca. 1555",
+          "department": "Arms and Armor",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/aa/web-large/DP256970.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 467642,
+          "title": "The Unicorn Rests in a Garden (from the Unicorn Tapestries)",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "1495–1505",
+          "department": "The Cloisters",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/cl/web-large/DP118991.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 467640,
+          "title": "The Unicorn Defends Himself (from the Unicorn Tapestries)",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "1495–1505",
+          "department": "The Cloisters",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/cl/web-large/DP118987.jpg",
+          "isHighlight": false
+        },
+        {
+          "objectID": 467637,
+          "title": "The Hunters Enter the Woods (from the Unicorn Tapestries)",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "1495–1505",
+          "department": "The Cloisters",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/cl/web-large/DP118981.jpg",
+          "isHighlight": false
+        },
+        {
+          "objectID": 42731,
+          "title": "Bodhisattva Avalokiteshvara in Water Moon Form (Shuiyue Guanyin)",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "11th century",
+          "department": "Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/as/web-large/DP163982.jpg",
+          "isHighlight": false
+        },
+        {
+          "objectID": 39799,
+          "title": "Under the Wave off Kanagawa (Kanagawa oki nami ura), or The Great Wave, from the series Thirty-six Views of Mount Fuji (Fugaku sanjūrokkei)",
+          "artistDisplayName": "Katsushika Hokusai",
+          "artistDisplayBio": "Japanese, Tokyo (Edo) 1760–1849 Tokyo (Edo)",
+          "objectDate": "ca. 1830–32",
+          "department": "Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/as/web-large/DP141042.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 51088,
+          "title": "Night Rain at Karasaki",
+          "artistDisplayName": "Torii Kiyomasu II",
+          "artistDisplayBio": "Japanese, 1706–1763",
+          "objectDate": "early 18th century",
+          "department": "Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/as/web-large/DP123676.jpg",
+          "isHighlight": false
+        },
+        {
+          "objectID": 44701,
+          "title": "Bamboo and rock",
+          "artistDisplayName": "Deng Yu",
+          "artistDisplayBio": "Chinese, ca. 1300–after 1378",
+          "objectDate": "ca. 1360–67",
+          "department": "Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/as/web-large/DT6777.jpg",
+          "isHighlight": false
+        },
+        {
+          "objectID": 39889,
+          "title": "Portrait of the Great Master Seosan",
+          "artistDisplayName": "Unidentified artist",
+          "artistDisplayBio": null,
+          "objectDate": "late 17th–18th century",
+          "department": "Asian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/as/web-large/DP-37468-002.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 544442,
+          "title": "Sphinx of Hatshepsut",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 1479–1458 B.C.",
+          "department": "Egyptian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/eg/web-large/DP-24216-003.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 544450,
+          "title": "Seated Statue of Hatshepsut",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 1479–1458 B.C.",
+          "department": "Egyptian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/eg/web-large/DP-24215-002.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 547716,
+          "title": "Canopic jar inscribed for Minmose",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 1450–1400 B.C.",
+          "department": "Egyptian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/eg/web-large/DP116784.jpg",
+          "isHighlight": false
+        },
+        {
+          "objectID": 459126,
+          "title": "William Fraser of Reelig (1784–1835)",
+          "artistDisplayName": "Sir Henry Raeburn",
+          "artistDisplayBio": "British, Stockbridge, Scotland 1756–1823 Edinburgh, Scotland",
+          "objectDate": "1801",
+          "department": "Robert Lehman Collection",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/rl/web-large/DT3157.jpg",
+          "isHighlight": false
+        },
+        {
+          "objectID": 549169,
+          "title": "Cult Image of the God Ptah",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 945–600 BCE",
+          "department": "Egyptian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/eg/web-large/DP-39614-001.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 544184,
+          "title": "Face of Senwosret III",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 1878–1840 B.C.",
+          "department": "Egyptian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/eg/web-large/DP323868.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 544498,
+          "title": "Sphinx of Amenhotep III, possibly from a Model of a Temple",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 1390–1352 B.C.",
+          "department": "Egyptian Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/eg/web-large/DT539.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 248140,
+          "title": "Marble statue of a lion",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 400–390 BCE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DP-43517-001.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 248132,
+          "title": "Marble statue of an old woman",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "14–68 CE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DP277237.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 248891,
+          "title": "Bronze statue of an aristocratic boy",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "27 BCE–14 CE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DP345062.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 254502,
+          "title": "Bronze statue of Eros sleeping",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "3rd–2nd century BCE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DP123903.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 252890,
+          "title": "Marble grave stele of a little girl",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 450–440 BCE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DT279.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 257603,
+          "title": "Marble head of a Ptolemaic queen",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "ca. 270–250 BCE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DP333700.jpg",
+          "isHighlight": true
+        },
+        {
+          "objectID": 248205,
+          "title": "Marble sarcophagus with the contest between the Muses and the Sirens",
+          "artistDisplayName": null,
+          "artistDisplayBio": null,
+          "objectDate": "3rd quarter of 3rd century CE",
+          "department": "Greek and Roman Art",
+          "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DP138718.jpg",
+          "isHighlight": false
+        }
+      ]
+    }
+  ]
+}
