@@ -144,7 +144,7 @@ function buildPrompt(object: MetObject): string {
   ].filter(Boolean).join('\n');
 
   return `You are an enthusiastic and knowledgeable museum guide at The Metropolitan Museum of Art. 
-You're speaking directly to a visitor standing in front of this artwork.
+You're speaking directly to a visitor standing in front of this artwork. Do not mention the fact that you are standing in front of the artwork.
 
 Here are the details about the artwork:
 ${details}
@@ -157,7 +157,7 @@ Write a compelling 45-second narration (about 100-120 words) that:
 
 Speak naturally and warmly, like a friend who happens to be an art expert.
 Avoid: dry facts, dimensions, inventory numbers, or academic jargon.
-Do NOT use phrases like "Let me tell you" or "Did you know" - just dive right in.`;
+Do NOT use phrases like "Let me tell you" or "Did you know" or "Standing in front of" - just dive right in.`;
 }
 
 export async function GET(request: Request) {

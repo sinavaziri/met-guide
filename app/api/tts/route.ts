@@ -104,7 +104,7 @@ export async function GET(request: Request) {
   // Check cache first
   const cachedAudio = getCachedAudio(objectId);
   if (cachedAudio) {
-    return new NextResponse(cachedAudio, {
+    return new NextResponse(new Uint8Array(cachedAudio), {
       headers: {
         'Content-Type': 'audio/mpeg',
         'Content-Length': String(cachedAudio.length),
@@ -134,10 +134,13 @@ export async function GET(request: Request) {
   try {
     const openai = new OpenAI({ apiKey });
 
-    // Generate TTS audio
+    // Generate TTS audio with random voice selection
+    const voices = ['fable', 'nova'] as const;
+    const randomVoice = voices[Math.floor(Math.random() * voices.length)];
+    
     const response = await openai.audio.speech.create({
       model: 'tts-1',
-      voice: 'nova', // Warm, friendly voice suitable for museum guide
+      voice: randomVoice,
       input: text,
       response_format: 'mp3',
     });
@@ -150,7 +153,7 @@ export async function GET(request: Request) {
 
     console.log(`TTS generated for object ${objectId}: ${audioBuffer.length} bytes`);
 
-    return new NextResponse(audioBuffer, {
+    return new NextResponse(new Uint8Array(audioBuffer), {
       headers: {
         'Content-Type': 'audio/mpeg',
         'Content-Length': String(audioBuffer.length),

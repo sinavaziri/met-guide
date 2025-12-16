@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { MET_HIGHLIGHT_IDS } from '@/data/met_highlights';
+import { getFallbackImage } from '@/data/fallback_images';
 
 const MET_API_BASE = 'https://collectionapi.metmuseum.org/public/collection/v1/objects';
 
@@ -21,6 +22,11 @@ export async function GET() {
 
     const object = await response.json();
 
+    // Check for fallback image if API doesn't provide one
+    const fallback = getFallbackImage(object.objectID);
+    const primaryImage = object.primaryImage || fallback?.primaryImage || null;
+    const primaryImageSmall = object.primaryImageSmall || fallback?.primaryImageSmall || null;
+
     // Return a normalized subset of the data (matching the [id] route format)
     return NextResponse.json({
       objectID: object.objectID,
@@ -34,8 +40,8 @@ export async function GET() {
       culture: object.culture || null,
       period: object.period || null,
       classification: object.classification || null,
-      primaryImage: object.primaryImage || null,
-      primaryImageSmall: object.primaryImageSmall || null,
+      primaryImage,
+      primaryImageSmall,
       additionalImages: object.additionalImages || [],
       objectURL: object.objectURL || null,
       isHighlight: object.isHighlight || false,
@@ -46,6 +52,7 @@ export async function GET() {
       city: object.city || null,
       country: object.country || null,
       repository: object.repository || null,
+      imageSource: fallback ? fallback.source : 'Met Museum API',
     });
   } catch (error) {
     console.error('Error fetching random object:', error);

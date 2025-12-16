@@ -2,7 +2,8 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { prefetchAudioGuide } from '@/lib/prefetch-audio';
 
 interface Artwork {
   objectID: number;
@@ -38,16 +39,40 @@ function ObjectSkeleton() {
   );
 }
 
+const STORAGE_KEY = 'met-guide-featured-artwork';
+
 function FeaturedObject() {
   const [object, setObject] = useState<Artwork | null>(null);
   const [loading, setLoading] = useState(true);
   const [shuffling, setShuffling] = useState(false);
+  const prefetchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const fetchObject = async () => {
+  const fetchObject = async (forceNew = false) => {
     try {
       setLoading(true);
+      
+      // Check sessionStorage first (unless forcing new)
+      if (!forceNew && typeof window !== 'undefined') {
+        const stored = sessionStorage.getItem(STORAGE_KEY);
+        if (stored) {
+          try {
+            const parsed = JSON.parse(stored);
+            setObject(parsed);
+            setLoading(false);
+            return;
+          } catch {
+            // Invalid stored data, fetch new
+          }
+        }
+      }
+      
       const data = await getRandomObject();
       setObject(data);
+      
+      // Save to sessionStorage
+      if (typeof window !== 'undefined') {
+        sessionStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      }
     } catch (error) {
       console.error('Failed to fetch object:', error);
     } finally {
@@ -56,12 +81,34 @@ function FeaturedObject() {
   };
 
   useEffect(() => {
-    fetchObject();
+    fetchObject(false);
   }, []);
+
+  // Prefetch audio guide when object is displayed
+  // Delay slightly to prioritize visible content loading first
+  useEffect(() => {
+    if (!object?.objectID) return;
+
+    // Clear any pending prefetch timeout
+    if (prefetchTimeoutRef.current) {
+      clearTimeout(prefetchTimeoutRef.current);
+    }
+
+    // Delay prefetch to not compete with image loading
+    prefetchTimeoutRef.current = setTimeout(() => {
+      prefetchAudioGuide(object.objectID);
+    }, 1500);
+
+    return () => {
+      if (prefetchTimeoutRef.current) {
+        clearTimeout(prefetchTimeoutRef.current);
+      }
+    };
+  }, [object?.objectID]);
 
   const handleShuffle = async () => {
     setShuffling(true);
-    await fetchObject();
+    await fetchObject(true); // Force fetch new artwork
     // Small delay to show shuffle animation
     setTimeout(() => setShuffling(false), 300);
   };

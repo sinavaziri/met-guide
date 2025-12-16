@@ -217,8 +217,9 @@ function ZoomableImage({
       
       {/* Zoom hint */}
       {!isZoomed && (
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-black/50 backdrop-blur-sm 
-                        rounded-full text-white text-xs font-medium opacity-70 text-center">
+        <div className="absolute bottom-3 right-3 px-3 py-1.5 bg-black/50 backdrop-blur-sm 
+                        rounded-full text-white text-xs font-medium opacity-70" 
+             style={{ textAlign: 'left', left: '219px', top: '481px' }}>
           Pinch or double-tap to zoom
         </div>
       )}
@@ -296,7 +297,18 @@ function GuideSection({ objectId, title }: { objectId: number; title: string }) 
   };
 
   const handlePlayAudio = () => {
-    if (narration) {
+    if (!narration) return;
+    
+    const isCurrentTrack = audio.currentTrack?.objectId === objectId;
+    
+    if (isCurrentTrack && audio.isPlaying) {
+      // Currently playing this track - pause it
+      audio.pause();
+    } else if (isCurrentTrack && !audio.isPlaying) {
+      // This track is paused - resume it
+      audio.resume();
+    } else {
+      // Different track or no track - start playing this one
       audio.play({
         objectId,
         title,
@@ -395,7 +407,14 @@ function GuideSection({ objectId, title }: { objectId: number; title: string }) 
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
                   </svg>
-                  <span>Playing</span>
+                  <span>Pause</span>
+                </>
+              ) : audio.currentTrack?.objectId === objectId && !audio.isPlaying ? (
+                <>
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                  <span>Resume</span>
                 </>
               ) : (
                 <>
