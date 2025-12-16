@@ -14,8 +14,8 @@ interface Artwork {
 }
 
 async function getRandomObject(): Promise<Artwork> {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-  const res = await fetch(`${baseUrl}/api/object/random`, {
+  // Use relative URL for client-side fetches (works on any domain)
+  const res = await fetch('/api/object/random', {
     cache: 'no-store',
   });
 
