@@ -1,18 +1,8 @@
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
-import * as fs from 'fs';
-import * as path from 'path';
+import { getCachedNarration, cacheNarration } from '@/lib/redis';
 
 const MET_API_BASE = 'https://collectionapi.metmuseum.org/public/collection/v1';
-
-// In-memory cache for development (file-based cache for production persistence)
-const memoryCache = new Map<string, { narration: string; timestamp: number }>();
-
-// Cache directory for file-based persistence
-const CACHE_DIR = path.join(process.cwd(), 'cache', 'narrations');
-
-// Cache duration: 30 days
-const CACHE_DURATION_MS = 30 * 24 * 60 * 60 * 1000;
 
 interface MetObject {
   objectID: number;
@@ -27,96 +17,6 @@ interface MetObject {
   classification: string;
   creditLine: string;
   isHighlight: boolean;
-}
-
-interface NarrationCache {
-  narration: string;
-  timestamp: number;
-  objectId: number;
-}
-
-function ensureCacheDir() {
-  if (!fs.existsSync(CACHE_DIR)) {
-    fs.mkdirSync(CACHE_DIR, { recursive: true });
-  }
-}
-
-function getCacheFilePath(objectId: string): string {
-  return path.join(CACHE_DIR, `${objectId}.json`);
-}
-
-function getFromFileCache(objectId: string): string | null {
-  try {
-    const filePath = getCacheFilePath(objectId);
-    if (!fs.existsSync(filePath)) return null;
-    
-    const data: NarrationCache = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-    
-    // Check if cache is still valid
-    if (Date.now() - data.timestamp > CACHE_DURATION_MS) {
-      fs.unlinkSync(filePath); // Delete expired cache
-      return null;
-    }
-    
-    return data.narration;
-  } catch {
-    return null;
-  }
-}
-
-function saveToFileCache(objectId: string, narration: string) {
-  try {
-    ensureCacheDir();
-    const data: NarrationCache = {
-      narration,
-      timestamp: Date.now(),
-      objectId: parseInt(objectId),
-    };
-    fs.writeFileSync(getCacheFilePath(objectId), JSON.stringify(data, null, 2));
-  } catch (error) {
-    console.error('Failed to save narration to cache:', error);
-  }
-}
-
-function getFromMemoryCache(objectId: string): string | null {
-  const cached = memoryCache.get(objectId);
-  if (!cached) return null;
-  
-  // Check if cache is still valid
-  if (Date.now() - cached.timestamp > CACHE_DURATION_MS) {
-    memoryCache.delete(objectId);
-    return null;
-  }
-  
-  return cached.narration;
-}
-
-function saveToMemoryCache(objectId: string, narration: string) {
-  memoryCache.set(objectId, {
-    narration,
-    timestamp: Date.now(),
-  });
-}
-
-function getCachedNarration(objectId: string): string | null {
-  // Check memory cache first (fastest)
-  const memCached = getFromMemoryCache(objectId);
-  if (memCached) return memCached;
-  
-  // Check file cache
-  const fileCached = getFromFileCache(objectId);
-  if (fileCached) {
-    // Warm up memory cache
-    saveToMemoryCache(objectId, fileCached);
-    return fileCached;
-  }
-  
-  return null;
-}
-
-function cacheNarration(objectId: string, narration: string) {
-  saveToMemoryCache(objectId, narration);
-  saveToFileCache(objectId, narration);
 }
 
 async function fetchMetObject(objectId: string): Promise<MetObject | null> {
@@ -171,8 +71,8 @@ export async function GET(request: Request) {
     );
   }
 
-  // Check cache first
-  const cachedNarration = getCachedNarration(objectId);
+  // Check cache first (Redis in production, memory in development)
+  const cachedNarration = await getCachedNarration(objectId);
   if (cachedNarration) {
     return NextResponse.json({
       narration: cachedNarration,
@@ -222,8 +122,8 @@ export async function GET(request: Request) {
       );
     }
 
-    // Cache the result
-    cacheNarration(objectId, narration);
+    // Cache the result (Redis in production, memory in development)
+    await cacheNarration(objectId, narration);
 
     // Track token usage for cost monitoring
     const usage = completion.usage;
@@ -250,4 +150,3 @@ export async function GET(request: Request) {
     );
   }
 }
-

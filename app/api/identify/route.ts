@@ -186,7 +186,7 @@ export async function POST(request: Request) {
   try {
     // Rate limiting - protect AI endpoints from abuse
     const clientId = getClientIdentifier(request);
-    const rateLimit = checkRateLimit(`identify:${clientId}`);
+    const rateLimit = await checkRateLimit(`identify:${clientId}`);
     
     if (!rateLimit.success) {
       return NextResponse.json(

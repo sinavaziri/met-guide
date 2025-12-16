@@ -1,78 +1,7 @@
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
-import * as fs from 'fs';
-import * as path from 'path';
+import { getCachedAudio, cacheAudio } from '@/lib/redis';
 import { checkRateLimit, getClientIdentifier } from '@/lib/rate-limiter';
-
-// Cache directory for audio files
-const AUDIO_CACHE_DIR = path.join(process.cwd(), 'cache', 'audio');
-
-// Cache duration: 30 days
-const CACHE_DURATION_MS = 30 * 24 * 60 * 60 * 1000;
-
-interface AudioCache {
-  timestamp: number;
-  objectId: string;
-  filename: string;
-}
-
-function ensureAudioCacheDir() {
-  if (!fs.existsSync(AUDIO_CACHE_DIR)) {
-    fs.mkdirSync(AUDIO_CACHE_DIR, { recursive: true });
-  }
-}
-
-function getAudioCachePath(objectId: string): string {
-  return path.join(AUDIO_CACHE_DIR, `${objectId}.mp3`);
-}
-
-function getAudioMetaPath(objectId: string): string {
-  return path.join(AUDIO_CACHE_DIR, `${objectId}.json`);
-}
-
-function getCachedAudio(objectId: string): Buffer | null {
-  try {
-    const audioPath = getAudioCachePath(objectId);
-    const metaPath = getAudioMetaPath(objectId);
-    
-    if (!fs.existsSync(audioPath) || !fs.existsSync(metaPath)) {
-      return null;
-    }
-    
-    const meta: AudioCache = JSON.parse(fs.readFileSync(metaPath, 'utf-8'));
-    
-    // Check if cache is expired
-    if (Date.now() - meta.timestamp > CACHE_DURATION_MS) {
-      fs.unlinkSync(audioPath);
-      fs.unlinkSync(metaPath);
-      return null;
-    }
-    
-    return fs.readFileSync(audioPath);
-  } catch {
-    return null;
-  }
-}
-
-function saveAudioToCache(objectId: string, audioBuffer: Buffer) {
-  try {
-    ensureAudioCacheDir();
-    
-    const audioPath = getAudioCachePath(objectId);
-    const metaPath = getAudioMetaPath(objectId);
-    
-    fs.writeFileSync(audioPath, audioBuffer);
-    
-    const meta: AudioCache = {
-      timestamp: Date.now(),
-      objectId,
-      filename: `${objectId}.mp3`,
-    };
-    fs.writeFileSync(metaPath, JSON.stringify(meta, null, 2));
-  } catch (error) {
-    console.error('Failed to save audio to cache:', error);
-  }
-}
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -88,7 +17,7 @@ export async function GET(request: Request) {
 
   // Check rate limit
   const clientId = getClientIdentifier(request);
-  const rateLimit = checkRateLimit(`tts:${clientId}`);
+  const rateLimit = await checkRateLimit(`tts:${clientId}`);
   
   if (!rateLimit.success) {
     return NextResponse.json(
@@ -101,8 +30,8 @@ export async function GET(request: Request) {
     );
   }
 
-  // Check cache first
-  const cachedAudio = getCachedAudio(objectId);
+  // Check cache first (Redis in production, memory in development)
+  const cachedAudio = await getCachedAudio(objectId);
   if (cachedAudio) {
     return new NextResponse(new Uint8Array(cachedAudio), {
       headers: {
@@ -148,8 +77,8 @@ export async function GET(request: Request) {
     // Get the audio buffer
     const audioBuffer = Buffer.from(await response.arrayBuffer());
 
-    // Cache the audio
-    saveAudioToCache(objectId, audioBuffer);
+    // Cache the audio (Redis in production, memory in development)
+    await cacheAudio(objectId, audioBuffer);
 
     console.log(`TTS generated for object ${objectId}: ${audioBuffer.length} bytes`);
 
@@ -170,4 +99,3 @@ export async function GET(request: Request) {
     );
   }
 }
-

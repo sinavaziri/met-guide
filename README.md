@@ -2,27 +2,28 @@
 
 A lightweight, mobile-first web companion for the Met Museum.
 
-## Milestone 0 - The Steel Thread ✅
+## Features
 
-This milestone establishes the basic scaffold:
-- Health check API endpoint
-- Random object API endpoint (fetches from Met Museum API)
-- Home page displaying a random object
-- Tailwind CSS with mobile-first design
-- Next.js Image optimization configured for Met Museum images
+- **AI-Powered Narrations**: Get engaging audio guides for any artwork using GPT-4o-mini and OpenAI TTS
+- **Artwork Identification**: Scan artworks with your camera to identify them using GPT-4o Vision
+- **Curated Tours**: Browse pre-built tours through the museum's highlights
+- **Mobile-First Design**: Optimized for use while walking through the museum
 
-## Getting Started
+## Getting Started (Local Development)
 
 1. Install dependencies:
 ```bash
 npm install
 ```
 
-2. Set up environment variables (optional - Met API works without a key for public endpoints):
+2. Set up environment variables:
 ```bash
-cp .env.example .env
-# Edit .env if needed
+cp env.example .env.local
 ```
+
+Edit `.env.local` and add your API keys:
+- `OPENAI_API_KEY` - Required for narrations and artwork identification
+- Upstash Redis credentials are optional for local development (falls back to in-memory cache)
 
 3. Run the development server:
 ```bash
@@ -31,51 +32,85 @@ npm run dev
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+## Production Deployment (Vercel)
+
+### Prerequisites
+
+1. **OpenAI API Key**: Get one from [platform.openai.com](https://platform.openai.com/api-keys)
+2. **Upstash Redis**: Create a free database at [upstash.com](https://upstash.com)
+3. **GitHub Repository**: Push your code to GitHub
+
+### Deploy to Vercel
+
+1. Go to [vercel.com](https://vercel.com) and sign in with GitHub
+2. Click "New Project" and import your repository
+3. Add the following environment variables in Vercel's dashboard:
+
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `OPENAI_API_KEY` | Your OpenAI API key | Yes |
+| `UPSTASH_REDIS_REST_URL` | Upstash Redis REST URL | Yes |
+| `UPSTASH_REDIS_REST_TOKEN` | Upstash Redis REST token | Yes |
+| `NEXT_PUBLIC_BASE_URL` | Your Vercel app URL (e.g., `https://met-guide.vercel.app`) | Yes |
+
+4. Click "Deploy"
+
+### Environment Variables
+
+Copy `env.example` to `.env.local` for local development. See the file for detailed descriptions of each variable.
+
+### Architecture
+
+```
+┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
+│   Client App    │────▶│  Vercel Edge    │────▶│   OpenAI API    │
+│   (Next.js)     │     │  (API Routes)   │     │  (GPT-4o, TTS)  │
+└─────────────────┘     └────────┬────────┘     └─────────────────┘
+                                 │
+                                 ▼
+                        ┌─────────────────┐     ┌─────────────────┐
+                        │  Upstash Redis  │     │  Met Museum API │
+                        │  (Cache + Rate) │     │  (Collection)   │
+                        └─────────────────┘     └─────────────────┘
+```
+
+### Cost Estimates
+
+- **Vercel**: Free tier includes 100GB bandwidth and serverless functions
+- **Upstash Redis**: Free tier includes 10K commands/day
+- **OpenAI**: 
+  - Narrations (GPT-4o-mini): ~$0.002 per narration
+  - Text-to-Speech: ~$0.015 per audio generation
+  - Image Identification (GPT-4o): ~$0.01 per scan
+
 ## API Endpoints
 
-- `GET /api/health` - Returns health status
-- `GET /api/object/random` - Returns a random object from the Met Museum collection (currently hardcoded to The Temple of Dendur)
+- `GET /api/health` - Health check
+- `GET /api/object/random` - Get a random artwork from Met highlights
+- `GET /api/object/[id]` - Get specific artwork details
+- `GET /api/narrate?id=<objectId>` - Generate AI narration for an artwork
+- `GET /api/tts?id=<objectId>&text=<narration>` - Generate audio from narration
+- `POST /api/identify` - Identify artwork from camera image
+- `GET /api/tours` - Get available tours
 
 ## Testing
 
-Run the test suite to verify Milestone 0 features:
-
+Run the test suite:
 ```bash
 npm test
 ```
 
-Run tests in watch mode during development:
-
+Run tests in watch mode:
 ```bash
 npm run test:watch
 ```
 
-### Test Coverage
+## Tech Stack
 
-The test suite includes:
-- **API Health Endpoint** (`__tests__/api/health.test.ts`) - ✅ Verifies health check returns correct status
-- **API Random Object Endpoint** (`__tests__/api/object/random.test.ts`) - ✅ Verifies Met API connectivity and error handling
-- **Home Page** (`__tests__/pages/home.test.tsx`) - ⚠️ Tests written but have known limitations (see below)
-- **Next.js Configuration** (`__tests__/config/next.config.test.ts`) - ✅ Verifies image remotePatterns configuration
-- **Integration Tests** (`__tests__/milestone0.test.ts`) - ✅ Comprehensive milestone verification
-
-### Known Test Limitations
-
-**Async Server Component Testing:**
-The home page tests currently fail due to a limitation with testing Next.js 14+ async server components using React Testing Library. The async server component returns a Promise that React cannot directly render in the test environment.
-
-**Verification Methods:**
-- ✅ API endpoint tests verify data fetching works correctly
-- ✅ Integration tests verify project structure and configuration
-- ✅ Manual/E2E testing recommended for full page rendering verification
-
-See `__tests__/README.md` for more details on test limitations and workarounds.
-
-## Deployment
-
-For production deployment (e.g., Vercel), set the `NEXT_PUBLIC_BASE_URL` environment variable to your production URL.
-
-
-
-
-
+- **Framework**: Next.js 14 (App Router)
+- **Styling**: Tailwind CSS
+- **AI**: OpenAI (GPT-4o-mini, GPT-4o Vision, TTS)
+- **Cache**: Upstash Redis
+- **Rate Limiting**: Upstash Ratelimit
+- **Analytics**: Vercel Analytics
+- **Deployment**: Vercel

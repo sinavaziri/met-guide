@@ -1,17 +1,12 @@
 /**
  * Rate Limiter
  * 
- * Simple in-memory rate limiter for development.
- * In production, use Upstash Redis for distributed rate limiting.
+ * Uses Upstash Ratelimit for distributed rate limiting in production.
+ * Falls back to in-memory rate limiting for local development without Redis.
  */
 
-interface RateLimitEntry {
-  count: number;
-  resetTime: number;
-}
-
-// In-memory store for development
-const memoryStore = new Map<string, RateLimitEntry>();
+import { Ratelimit } from '@upstash/ratelimit';
+import { Redis } from '@upstash/redis';
 
 // Configuration
 const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute
@@ -24,10 +19,65 @@ export interface RateLimitResult {
   reset: number;
 }
 
+// In-memory store for development fallback
+interface RateLimitEntry {
+  count: number;
+  resetTime: number;
+}
+const memoryStore = new Map<string, RateLimitEntry>();
+
+// Initialize Upstash Ratelimit (lazy initialization)
+let ratelimit: Ratelimit | null = null;
+
+function getRatelimit(): Ratelimit | null {
+  if (ratelimit) return ratelimit;
+  
+  const url = process.env.UPSTASH_REDIS_REST_URL;
+  const token = process.env.UPSTASH_REDIS_REST_TOKEN;
+  
+  if (url && token) {
+    const redis = new Redis({ url, token });
+    ratelimit = new Ratelimit({
+      redis,
+      limiter: Ratelimit.slidingWindow(MAX_REQUESTS_PER_WINDOW, '1 m'),
+      analytics: true,
+    });
+    return ratelimit;
+  }
+  
+  return null;
+}
+
 /**
  * Check rate limit for a given identifier (usually IP or user ID)
+ * Uses Upstash Ratelimit in production, in-memory fallback for development
  */
-export function checkRateLimit(identifier: string): RateLimitResult {
+export async function checkRateLimit(identifier: string): Promise<RateLimitResult> {
+  const upstashRatelimit = getRatelimit();
+  
+  if (upstashRatelimit) {
+    try {
+      const result = await upstashRatelimit.limit(identifier);
+      return {
+        success: result.success,
+        limit: result.limit,
+        remaining: result.remaining,
+        reset: result.reset,
+      };
+    } catch (error) {
+      console.error('Upstash Ratelimit error:', error);
+      // Fall through to memory-based rate limiting
+    }
+  }
+  
+  // Fallback to in-memory rate limiting (for development or if Redis fails)
+  return checkMemoryRateLimit(identifier);
+}
+
+/**
+ * In-memory rate limiting fallback
+ */
+function checkMemoryRateLimit(identifier: string): RateLimitResult {
   const now = Date.now();
   const key = identifier;
   
@@ -75,7 +125,7 @@ export function getClientIdentifier(request: Request): string {
 }
 
 /**
- * Clean up expired entries (call periodically in production)
+ * Clean up expired entries from memory store (for development)
  */
 export function cleanupExpiredEntries(): void {
   const now = Date.now();
@@ -87,8 +137,7 @@ export function cleanupExpiredEntries(): void {
   }
 }
 
-// Clean up every minute
+// Clean up every minute (only for memory store in development)
 if (typeof setInterval !== 'undefined') {
   setInterval(cleanupExpiredEntries, 60 * 1000);
 }
-

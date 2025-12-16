@@ -43,8 +43,10 @@ const STORAGE_KEY = 'met-guide-featured-artwork';
 
 function FeaturedObject() {
   const [object, setObject] = useState<Artwork | null>(null);
+  const [displayedObject, setDisplayedObject] = useState<Artwork | null>(null);
   const [loading, setLoading] = useState(true);
   const [shuffling, setShuffling] = useState(false);
+  const [transitioning, setTransitioning] = useState(false);
   const prefetchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const fetchObject = async (forceNew = false) => {
@@ -58,6 +60,7 @@ function FeaturedObject() {
           try {
             const parsed = JSON.parse(stored);
             setObject(parsed);
+            setDisplayedObject(parsed);
             setLoading(false);
             return;
           } catch {
@@ -68,6 +71,11 @@ function FeaturedObject() {
       
       const data = await getRandomObject();
       setObject(data);
+      
+      // For initial load, set displayed object immediately
+      if (!displayedObject) {
+        setDisplayedObject(data);
+      }
       
       // Save to sessionStorage
       if (typeof window !== 'undefined') {
@@ -83,6 +91,22 @@ function FeaturedObject() {
   useEffect(() => {
     fetchObject(false);
   }, []);
+
+  // Handle smooth transition when object changes during shuffle
+  useEffect(() => {
+    if (object && displayedObject && object.objectID !== displayedObject.objectID && shuffling) {
+      setTransitioning(true);
+      // Wait for fade out, then swap content
+      const timer = setTimeout(() => {
+        setDisplayedObject(object);
+        // Wait a frame then fade in
+        requestAnimationFrame(() => {
+          setTransitioning(false);
+        });
+      }, 250);
+      return () => clearTimeout(timer);
+    }
+  }, [object, displayedObject, shuffling]);
 
   // Prefetch audio guide when object is displayed
   // Delay slightly to prioritize visible content loading first
@@ -109,21 +133,23 @@ function FeaturedObject() {
   const handleShuffle = async () => {
     setShuffling(true);
     await fetchObject(true); // Force fetch new artwork
-    // Small delay to show shuffle animation
-    setTimeout(() => setShuffling(false), 300);
+    // Keep shuffling state until transition completes
+    setTimeout(() => setShuffling(false), 600);
   };
 
-  if (loading && !object) {
+  if (loading && !displayedObject) {
     return <ObjectSkeleton />;
   }
 
-  if (!object) {
+  if (!displayedObject) {
     return (
       <div className="text-center py-8 text-stone-500">
         Failed to load featured artwork
       </div>
     );
   }
+
+  const isAnimating = shuffling || transitioning;
 
   return (
     <div className="space-y-4">
@@ -142,7 +168,7 @@ function FeaturedObject() {
                      active:scale-95"
           aria-label="Shuffle featured artwork"
         >
-          <span className={`transition-transform duration-300 ${shuffling ? 'rotate-180' : ''}`}>
+          <span className={`transition-transform duration-500 ${shuffling ? 'rotate-[360deg]' : ''}`}>
             🔀
           </span>
           <span>Shuffle</span>
@@ -150,21 +176,25 @@ function FeaturedObject() {
       </div>
 
       <Link 
-        href={`/objects/${object.objectID}`}
+        href={`/objects/${displayedObject.objectID}`}
         className="block group"
       >
-        <div className={`space-y-4 transition-opacity duration-300 ${shuffling ? 'opacity-50' : 'opacity-100'}`}>
+        <div 
+          className={`space-y-4 transition-all duration-300 ease-out
+                      ${transitioning ? 'opacity-0 scale-[0.98] blur-[2px]' : 'opacity-100 scale-100 blur-0'}`}
+        >
           {/* Image */}
-          {object.primaryImage && (
+          {displayedObject.primaryImage && (
             <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden 
                             bg-stone-100 shadow-lg shadow-stone-200/50
                             group-hover:shadow-xl group-hover:shadow-stone-300/50 
                             transition-shadow duration-300">
               <Image
-                src={object.primaryImage}
-                alt={object.title || 'Artwork'}
+                src={displayedObject.primaryImage}
+                alt={displayedObject.title || 'Artwork'}
                 fill
-                className="object-contain group-hover:scale-[1.02] transition-transform duration-500"
+                className={`object-contain transition-transform duration-500
+                            ${isAnimating ? '' : 'group-hover:scale-[1.02]'}`}
                 sizes="(max-width: 768px) 100vw, 768px"
                 priority
               />
@@ -185,15 +215,15 @@ function FeaturedObject() {
           <div className="space-y-2 px-1">
             <h2 className="text-xl font-semibold text-stone-900 leading-tight 
                            group-hover:text-stone-700 transition-colors">
-              {object.title || 'Untitled'}
+              {displayedObject.title || 'Untitled'}
             </h2>
             
-            {object.artistDisplayName && (
-              <p className="text-stone-600">{object.artistDisplayName}</p>
+            {displayedObject.artistDisplayName && (
+              <p className="text-stone-600">{displayedObject.artistDisplayName}</p>
             )}
             
-            {object.objectDate && (
-              <p className="text-sm text-stone-400">{object.objectDate}</p>
+            {displayedObject.objectDate && (
+              <p className="text-sm text-stone-400">{displayedObject.objectDate}</p>
             )}
           </div>
         </div>
