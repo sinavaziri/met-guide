@@ -237,7 +237,10 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-to-b from-stone-50 to-white">
       <div className="max-w-md mx-auto px-5 py-8">
         {/* Header */}
-        <header className="mb-10">
+        <header 
+          className="mb-10 cursor-pointer"
+          onClick={() => window.location.reload()}
+        >
           <div className="flex items-center gap-3 mb-2">
             <div className="w-10 h-10 bg-stone-900 rounded-xl flex items-center justify-center 
                             text-white font-bold text-lg shadow-lg shadow-stone-400/30">
