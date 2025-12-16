@@ -237,22 +237,28 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-to-b from-stone-50 to-white">
       <div className="max-w-md mx-auto px-5 py-8">
         {/* Header */}
-        <header 
-          className="mb-10 cursor-pointer"
-          onClick={() => window.location.reload()}
-        >
-          <div className="flex items-center gap-3 mb-2">
-            <div className="w-10 h-10 bg-stone-900 rounded-xl flex items-center justify-center 
-                            text-white font-bold text-lg shadow-lg shadow-stone-400/30">
-              M
+        <header className="mb-10">
+          <button 
+            type="button"
+            className="w-full text-left cursor-pointer"
+            onClick={() => {
+              sessionStorage.removeItem(STORAGE_KEY);
+              window.location.reload();
+            }}
+          >
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-10 h-10 bg-stone-900 rounded-xl flex items-center justify-center 
+                              text-white font-bold text-lg shadow-lg shadow-stone-400/30">
+                M
+              </div>
+              <h1 className="text-2xl font-bold text-stone-900 tracking-tight">
+                Met Guide
+              </h1>
             </div>
-            <h1 className="text-2xl font-bold text-stone-900 tracking-tight">
-              Met Guide
-            </h1>
-          </div>
-          <p className="text-stone-500 pl-[52px]">
-            Your companion at The Met
-          </p>
+            <p className="text-stone-500 pl-[52px]">
+              Your companion at The Met
+            </p>
+          </button>
         </header>
 
         {/* Featured Object */}
