@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server';
 import { MET_HIGHLIGHT_IDS } from '@/data/met_highlights';
 import { getFallbackImage } from '@/data/fallback_images';
 
+// Ensure this route is always dynamic (not cached) so random selection works
+export const dynamic = 'force-dynamic';
+
 const MET_API_BASE = 'https://collectionapi.metmuseum.org/public/collection/v1/objects';
 
 export async function GET() {
