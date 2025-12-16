@@ -52,7 +52,6 @@ export const MET_HIGHLIGHT_IDS: number[] = [
   436944,  // The Spanish Singer - Édouard Manet
   436896,  // Woman Reading - Édouard Manet
   437133,  // Garden at Sainte-Adresse - Claude Monet
-  437127,  // Bridge over a Pond of Water Lilies - Claude Monet
   438821,  // Ia Orana Maria - Paul Gauguin
   436446,  // Two Tahitian Women - Paul Gauguin
   357387,  // The Siesta - Paul Gauguin
