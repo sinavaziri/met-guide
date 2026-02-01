@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
-import OpenAI from 'openai';
 import { getCachedNarration, cacheNarration } from '@/lib/redis';
+import { getOpenAIClient, isOpenAIConfigured } from '@/lib/openai';
+import { checkRateLimit, getClientIdentifier } from '@/lib/rate-limiter';
 
 const MET_API_BASE = 'https://collectionapi.metmuseum.org/public/collection/v1';
 
@@ -71,6 +72,24 @@ export async function GET(request: Request) {
     );
   }
 
+  // Rate limiting - protect AI endpoints from abuse
+  const clientId = getClientIdentifier(request);
+  const rateLimit = await checkRateLimit(`narrate:${clientId}`);
+  
+  if (!rateLimit.success) {
+    return NextResponse.json(
+      { error: 'Rate limit exceeded. Please try again later.' },
+      { 
+        status: 429,
+        headers: {
+          'X-RateLimit-Limit': String(rateLimit.limit),
+          'X-RateLimit-Remaining': String(rateLimit.remaining),
+          'X-RateLimit-Reset': String(rateLimit.reset),
+        }
+      }
+    );
+  }
+
   // Check cache first (Redis in production, memory in development)
   const cachedNarration = await getCachedNarration(objectId);
   if (cachedNarration) {
@@ -81,8 +100,7 @@ export async function GET(request: Request) {
   }
 
   // Check for OpenAI API key
-  const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey) {
+  if (!isOpenAIConfigured()) {
     return NextResponse.json(
       { error: 'OpenAI API key not configured' },
       { status: 503 }
@@ -99,7 +117,7 @@ export async function GET(request: Request) {
   }
 
   try {
-    const openai = new OpenAI({ apiKey });
+    const openai = getOpenAIClient();
 
     const completion = await openai.chat.completions.create({
       model: 'gpt-4o-mini',

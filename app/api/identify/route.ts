@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
+import { getOpenAIClient, isOpenAIConfigured } from '@/lib/openai';
 import { checkRateLimit, getClientIdentifier } from '@/lib/rate-limiter';
 
 const MET_API_BASE = 'https://collectionapi.metmuseum.org/public/collection/v1';
@@ -213,15 +214,14 @@ export async function POST(request: Request) {
     }
 
     // Check for OpenAI API key
-    const apiKey = process.env.OPENAI_API_KEY;
-    if (!apiKey) {
+    if (!isOpenAIConfigured()) {
       return NextResponse.json(
         { error: 'OpenAI API key not configured' },
         { status: 503 }
       );
     }
 
-    const openai = new OpenAI({ apiKey });
+    const openai = getOpenAIClient();
 
     // Step 1: Analyze the image with Vision API
     console.log('Analyzing image with Vision API...');
@@ -267,16 +267,15 @@ export async function POST(request: Request) {
 
     console.log(`Found ${allObjectIds.size} candidate objects`);
 
-    // Step 3: Fetch object details and score them
+    // Step 3: Fetch object details in parallel and score them
     const objectIds = Array.from(allObjectIds).slice(0, 15); // Limit fetches
-    const objects: MetObject[] = [];
-
-    for (const id of objectIds) {
-      const obj = await fetchMetObject(id);
-      if (obj && (obj.primaryImageSmall || obj.primaryImage)) {
-        objects.push(obj);
-      }
-    }
+    const fetchResults = await Promise.allSettled(
+      objectIds.map(id => fetchMetObject(id))
+    );
+    const objects: MetObject[] = fetchResults
+      .filter((r): r is PromiseFulfilledResult<MetObject | null> => r.status === 'fulfilled')
+      .map(r => r.value)
+      .filter((obj): obj is MetObject => obj !== null && !!(obj.primaryImageSmall || obj.primaryImage));
 
     // Step 4: Score and rank results
     const scoredResults: SearchResult[] = objects.map(obj => {

@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
-import * as fs from 'fs';
-import * as path from 'path';
+import toursData from '@/data/tours.json';
 
 interface TourObject {
   objectID: number;
@@ -27,44 +26,9 @@ interface ToursData {
   tours: Tour[];
 }
 
-// Cache the tours data in memory (only in production)
-let cachedTours: ToursData | null = null;
-
-function loadTours(): ToursData | null {
-  // Skip cache in development to allow hot reloading of tours.json
-  if (process.env.NODE_ENV === 'production' && cachedTours) {
-    return cachedTours;
-  }
-  
-  try {
-    const filePath = path.join(process.cwd(), 'data', 'tours.json');
-    const fileContents = fs.readFileSync(filePath, 'utf-8');
-    const tours = JSON.parse(fileContents);
-    
-    // Only cache in production
-    if (process.env.NODE_ENV === 'production') {
-      cachedTours = tours;
-    }
-    
-    return tours;
-  } catch (error) {
-    console.error('Error loading tours:', error);
-    return null;
-  }
-}
-
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const tourId = searchParams.get('id');
-  
-  const toursData = loadTours();
-  
-  if (!toursData) {
-    return NextResponse.json(
-      { error: 'Tours data not available. Run `npm run generate-tours` first.' },
-      { status: 503 }
-    );
-  }
   
   // If a specific tour ID is requested
   if (tourId) {

@@ -3,8 +3,9 @@
 import { useParams, useRouter } from 'next/navigation';
 import useSWR from 'swr';
 import Image from 'next/image';
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 import { useAudio } from '@/lib/audio-context';
+import { isFavorite, toggleFavorite, addRecentlyViewed, SavedArtwork } from '@/lib/favorites';
 
 // Types for Met object data
 interface MetObject {
@@ -218,8 +219,7 @@ function ZoomableImage({
       {/* Zoom hint */}
       {!isZoomed && (
         <div className="absolute bottom-3 right-3 px-3 py-1.5 bg-black/50 backdrop-blur-sm 
-                        rounded-full text-white text-xs font-medium opacity-70" 
-             style={{ textAlign: 'left', left: '219px', top: '481px' }}>
+                        rounded-full text-white text-xs font-medium opacity-70">
           Pinch or double-tap to zoom
         </div>
       )}
@@ -446,6 +446,33 @@ function GuideSection({ objectId, title }: { objectId: number; title: string }) 
 // Main object detail component
 function ObjectDetail({ object }: { object: MetObject }) {
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [favorited, setFavorited] = useState(false);
+
+  useEffect(() => {
+    // Check if favorited and track view
+    setFavorited(isFavorite(object.objectID));
+    
+    // Track recently viewed
+    addRecentlyViewed({
+      objectID: object.objectID,
+      title: object.title || 'Untitled',
+      artistDisplayName: object.artistDisplayName,
+      primaryImageSmall: object.primaryImageSmall,
+      savedAt: Date.now(),
+    });
+  }, [object]);
+
+  const handleToggleFavorite = () => {
+    const artwork: SavedArtwork = {
+      objectID: object.objectID,
+      title: object.title || 'Untitled',
+      artistDisplayName: object.artistDisplayName,
+      primaryImageSmall: object.primaryImageSmall,
+      savedAt: Date.now(),
+    };
+    const newState = toggleFavorite(artwork);
+    setFavorited(newState);
+  };
 
   return (
     <div className="space-y-6">
@@ -469,9 +496,22 @@ function ObjectDetail({ object }: { object: MetObject }) {
       
       {/* Title and Artist */}
       <div className="space-y-2 px-1">
-        <h1 className="text-2xl font-bold text-stone-900 leading-tight">
-          {object.title || 'Untitled'}
-        </h1>
+        <div className="flex items-start justify-between gap-3">
+          <h1 className="text-2xl font-bold text-stone-900 leading-tight flex-1">
+            {object.title || 'Untitled'}
+          </h1>
+          <button
+            onClick={handleToggleFavorite}
+            className="p-2 -mt-1 rounded-full hover:bg-stone-100 active:scale-95 transition-all flex-shrink-0"
+            aria-label={favorited ? 'Remove from favorites' : 'Add to favorites'}
+          >
+            <svg className="w-6 h-6" fill={favorited ? 'currentColor' : 'none'} stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" 
+                    className={favorited ? 'text-red-500' : 'text-stone-400'} />
+            </svg>
+          </button>
+        </div>
         
         {object.artistDisplayName && (
           <p className="text-lg text-stone-600">{object.artistDisplayName}</p>

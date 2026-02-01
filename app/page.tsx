@@ -241,6 +241,7 @@ export default function Home() {
           <button 
             type="button"
             className="w-full text-left cursor-pointer"
+            aria-label="Refresh Met Guide home"
             onClick={() => {
               sessionStorage.removeItem(STORAGE_KEY);
               window.location.reload();
@@ -264,26 +265,47 @@ export default function Home() {
         {/* Featured Object */}
         <FeaturedObject />
 
+        {/* My Collection Link */}
+        <Link href="/favorites" className="mt-10 flex items-center justify-between p-4 bg-stone-50 rounded-2xl border border-stone-100 hover:bg-stone-100 transition-all">
+          <div className="flex items-center gap-3">
+            <span className="text-xl">❤️</span>
+            <span className="text-sm font-medium text-stone-700">My Collection</span>
+          </div>
+          <svg className="w-5 h-5 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </Link>
+
         {/* Quick actions */}
-        <nav className="mt-10 grid grid-cols-2 gap-3">
+        <nav className="mt-6 grid grid-cols-3 gap-3">
           <Link 
             href="/scan"
-            className="p-5 bg-gradient-to-br from-amber-50 to-orange-50 hover:from-amber-100 hover:to-orange-100 
+            className="p-4 bg-gradient-to-br from-amber-50 to-orange-50 hover:from-amber-100 hover:to-orange-100 
                        rounded-2xl text-center transition-all hover:shadow-lg hover:shadow-amber-200/50 
                        active:scale-95 border border-amber-100"
           >
             <div className="text-2xl mb-2">📷</div>
-            <span className="text-sm font-medium text-stone-700">Scan Art</span>
-            <p className="text-xs text-stone-500 mt-1">Identify artworks</p>
+            <span className="text-sm font-medium text-stone-700">Scan</span>
+            <p className="text-xs text-stone-500 mt-1">Identify art</p>
+          </Link>
+          <Link 
+            href="/search"
+            className="p-4 bg-gradient-to-br from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 
+                       rounded-2xl text-center transition-all hover:shadow-lg hover:shadow-blue-200/50 
+                       active:scale-95 border border-blue-100"
+          >
+            <div className="text-2xl mb-2">🔍</div>
+            <span className="text-sm font-medium text-stone-700">Search</span>
+            <p className="text-xs text-stone-500 mt-1">Find artwork</p>
           </Link>
           <Link 
             href="/tours"
-            className="p-5 bg-stone-100/80 hover:bg-stone-200/80 rounded-2xl text-center 
+            className="p-4 bg-stone-100/80 hover:bg-stone-200/80 rounded-2xl text-center 
                        transition-all hover:shadow-lg hover:shadow-stone-200/50 active:scale-95"
           >
             <div className="text-2xl mb-2">🗺️</div>
             <span className="text-sm font-medium text-stone-600">Tours</span>
-            <p className="text-xs text-stone-400 mt-1">Explore curated art</p>
+            <p className="text-xs text-stone-400 mt-1">Curated art</p>
           </Link>
         </nav>
       </div>

@@ -3,6 +3,7 @@
 import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 import useSWR from 'swr';
 
 interface TourObject {
@@ -51,13 +52,12 @@ function ObjectCard({ object, index }: { object: TourObject; index: number }) {
                  transition-all duration-200 group border border-stone-100
                  hover:border-stone-200"
     >
-      {/* Index badge */}
-      <div className="absolute -left-2 -top-2 w-6 h-6 bg-stone-900 text-white 
-                      rounded-full text-xs font-bold flex items-center justify-center
-                      shadow-lg z-10 opacity-0 group-hover:opacity-100 transition-opacity">
+      {/* Index number */}
+      <div className="w-7 h-7 bg-stone-200 text-stone-600 rounded-full text-xs font-bold 
+                      flex items-center justify-center flex-shrink-0 self-center">
         {index + 1}
       </div>
-      
+
       {/* Thumbnail */}
       <div className="w-20 h-20 relative rounded-lg overflow-hidden bg-stone-200 flex-shrink-0">
         <Image
@@ -150,6 +150,7 @@ export default function TourDetailPage() {
   const params = useParams();
   const router = useRouter();
   const tourId = params.id as string;
+  const [visibleCount, setVisibleCount] = useState(10);
 
   const { data: tour, error, isLoading } = useSWR<Tour>(
     tourId ? `/api/tours?id=${tourId}` : null,
@@ -214,20 +215,35 @@ export default function TourDetailPage() {
             <TourHeader tour={tour} />
             
             <div className="space-y-3">
-              {tour.objects.map((object, index) => (
+              {tour.objects.slice(0, visibleCount).map((object, index) => (
                 <div key={object.objectID} className="relative">
                   <ObjectCard object={object} index={index} />
                 </div>
               ))}
             </div>
             
+            {/* Load More button */}
+            {visibleCount < tour.objects.length && (
+              <div className="flex justify-center mt-6">
+                <button
+                  onClick={() => setVisibleCount(prev => Math.min(prev + 10, tour.objects.length))}
+                  className="px-6 py-3 bg-stone-900 text-white rounded-full font-medium 
+                             hover:bg-stone-800 active:scale-95 transition-all"
+                >
+                  Load More ({tour.objects.length - visibleCount} remaining)
+                </button>
+              </div>
+            )}
+            
             {/* End of tour message */}
-            <div className="text-center py-8 mt-4">
-              <div className="text-3xl mb-2">🎨</div>
-              <p className="text-stone-400 text-sm">
-                End of tour • {tour.objectCount} artworks
-              </p>
-            </div>
+            {visibleCount >= tour.objects.length && (
+              <div className="text-center py-8 mt-4">
+                <div className="text-3xl mb-2">🎨</div>
+                <p className="text-stone-400 text-sm">
+                  End of tour • {tour.objectCount} artworks
+                </p>
+              </div>
+            )}
           </>
         )}
       </div>

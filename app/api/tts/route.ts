@@ -1,7 +1,10 @@
 import { NextResponse } from 'next/server';
-import OpenAI from 'openai';
 import { getCachedAudio, cacheAudio } from '@/lib/redis';
+import { getOpenAIClient, isOpenAIConfigured } from '@/lib/openai';
 import { checkRateLimit, getClientIdentifier } from '@/lib/rate-limiter';
+
+const MAX_TTS_TEXT_LENGTH = 1500; // Max characters for TTS input
+const TTS_VOICES = ['fable', 'nova'] as const;
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -51,9 +54,16 @@ export async function GET(request: Request) {
     );
   }
 
+  // Validate text length to prevent abuse
+  if (text.length > MAX_TTS_TEXT_LENGTH) {
+    return NextResponse.json(
+      { error: `Text exceeds maximum length of ${MAX_TTS_TEXT_LENGTH} characters` },
+      { status: 400 }
+    );
+  }
+
   // Check for OpenAI API key
-  const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey) {
+  if (!isOpenAIConfigured()) {
     return NextResponse.json(
       { error: 'OpenAI API key not configured' },
       { status: 503 }
@@ -61,11 +71,11 @@ export async function GET(request: Request) {
   }
 
   try {
-    const openai = new OpenAI({ apiKey });
+    const openai = getOpenAIClient();
 
-    // Generate TTS audio with random voice selection
-    const voices = ['fable', 'nova'] as const;
-    const randomVoice = voices[Math.floor(Math.random() * voices.length)];
+    // Pick a consistent voice per object (hash objectId to voice index)
+    const voiceIndex = parseInt(objectId!, 10) % TTS_VOICES.length;
+    const randomVoice = TTS_VOICES[voiceIndex];
     
     const response = await openai.audio.speech.create({
       model: 'tts-1',

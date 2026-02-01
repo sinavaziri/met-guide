@@ -8,7 +8,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: '**.metmuseum.org',
+        hostname: 'collectionapi.metmuseum.org',
       },
       {
         protocol: 'https',
