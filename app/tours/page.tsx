@@ -28,17 +28,17 @@ const fetcher = (url: string) => fetch(url).then(res => res.json());
 
 function TourCardSkeleton() {
   return (
-    <div className="animate-pulse bg-stone-100 rounded-2xl p-5 space-y-4">
+    <div className="animate-pulse bg-stone-100 dark:bg-neutral-900 rounded-2xl p-5 space-y-4">
       <div className="flex items-start gap-4">
-        <div className="w-12 h-12 bg-stone-200 rounded-xl" />
+        <div className="w-12 h-12 bg-stone-200 dark:bg-neutral-800 rounded-xl" />
         <div className="flex-1 space-y-2">
-          <div className="h-6 bg-stone-200 rounded w-3/4" />
-          <div className="h-4 bg-stone-200 rounded w-full" />
+          <div className="h-6 bg-stone-200 dark:bg-neutral-800 rounded w-3/4" />
+          <div className="h-4 bg-stone-200 dark:bg-neutral-800 rounded w-full" />
         </div>
       </div>
       <div className="grid grid-cols-4 gap-2">
         {[1, 2, 3, 4].map(i => (
-          <div key={i} className="aspect-square bg-stone-200 rounded-lg" />
+          <div key={i} className="aspect-square bg-stone-200 dark:bg-neutral-800 rounded-lg" />
         ))}
       </div>
     </div>
@@ -49,12 +49,12 @@ function TourCard({ tour }: { tour: TourListItem }) {
   return (
     <Link
       href={`/tours/${tour.id}`}
-      className="block bg-stone-50 hover:bg-stone-100 rounded-2xl p-5 
+      className="block bg-stone-50 dark:bg-neutral-900/50 hover:bg-stone-100 dark:bg-neutral-900 dark:hover:bg-neutral-800 rounded-2xl p-5 
                  transition-all duration-200 group border border-stone-100
                  hover:border-stone-200 hover:shadow-lg hover:shadow-stone-200/50"
     >
       <div className="flex items-start gap-4 mb-4">
-        <div className="w-12 h-12 bg-stone-200 rounded-xl flex items-center justify-center
+        <div className="w-12 h-12 bg-stone-200 dark:bg-neutral-800 rounded-xl flex items-center justify-center
                         text-2xl group-hover:scale-110 transition-transform">
           {tour.icon}
         </div>
@@ -62,7 +62,7 @@ function TourCard({ tour }: { tour: TourListItem }) {
           <h2 className="text-lg font-semibold text-stone-900 group-hover:text-stone-700">
             {tour.name}
           </h2>
-          <p className="text-sm text-stone-500 line-clamp-2">
+          <p className="text-sm text-stone-500 dark:text-neutral-400 line-clamp-2">
             {tour.description}
           </p>
           <p className="text-xs text-stone-400 mt-1">
@@ -70,7 +70,7 @@ function TourCard({ tour }: { tour: TourListItem }) {
           </p>
         </div>
         <svg 
-          className="w-5 h-5 text-stone-300 group-hover:text-stone-500 
+          className="w-5 h-5 text-stone-300 group-hover:text-stone-500 dark:text-neutral-400 
                      group-hover:translate-x-1 transition-all mt-1" 
           fill="none" 
           stroke="currentColor" 
@@ -108,21 +108,21 @@ export default function ToursPage() {
   const { data, error, isLoading } = useSWR<ToursResponse>('/api/tours', fetcher);
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white dark:bg-neutral-950">
       {/* Sticky Header */}
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-stone-100">
+      <header className="sticky top-0 z-50 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-lg border-b border-stone-100 dark:border-neutral-800 dark:border-neutral-800">
         <div className="max-w-md mx-auto px-4 py-3 flex items-center gap-3">
           <button
             onClick={() => router.back()}
-            className="p-2 -ml-2 rounded-full hover:bg-stone-100 active:scale-95 
-                       transition-all text-stone-600"
+            className="p-2 -ml-2 rounded-full hover:bg-stone-100 dark:bg-neutral-900 dark:hover:bg-neutral-800 active:scale-95 
+                       transition-all text-stone-600 dark:text-neutral-300"
             aria-label="Go back"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
-          <h1 className="text-lg font-semibold text-stone-900">Tours</h1>
+          <h1 className="text-lg font-semibold text-stone-900 dark:text-neutral-100">Tours</h1>
         </div>
       </header>
 
