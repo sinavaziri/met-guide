@@ -50,8 +50,8 @@ function TourCard({ tour }: { tour: TourListItem }) {
     <Link
       href={`/tours/${tour.id}`}
       className="block bg-stone-50 dark:bg-neutral-900/50 hover:bg-stone-100 dark:bg-neutral-900 dark:hover:bg-neutral-800 rounded-2xl p-5 
-                 transition-all duration-200 group border border-stone-100
-                 hover:border-stone-200 hover:shadow-lg hover:shadow-stone-200/50"
+                 transition-all duration-200 group border border-stone-100 dark:border-neutral-800
+                 hover:border-met-gold hover:shadow-lg hover:shadow-met-gold/20 dark:hover:shadow-met-gold/10"
     >
       <div className="flex items-start gap-4 mb-4">
         <div className="w-12 h-12 bg-stone-200 dark:bg-neutral-800 rounded-xl flex items-center justify-center
@@ -59,13 +59,13 @@ function TourCard({ tour }: { tour: TourListItem }) {
           {tour.icon}
         </div>
         <div className="flex-1 min-w-0">
-          <h2 className="text-lg font-semibold text-stone-900 group-hover:text-stone-700">
+          <h2 className="text-lg font-semibold text-stone-900 dark:text-neutral-100 group-hover:text-met-red dark:group-hover:text-met-gold transition-colors">
             {tour.name}
           </h2>
-          <p className="text-sm text-stone-500 dark:text-neutral-400 line-clamp-2">
+          <p className="text-sm text-stone-600 dark:text-neutral-400 line-clamp-2">
             {tour.description}
           </p>
-          <p className="text-xs text-stone-400 mt-1">
+          <p className="museum-label mt-1">
             {tour.objectCount} artworks
           </p>
         </div>
@@ -129,7 +129,7 @@ export default function ToursPage() {
       <div className="max-w-md mx-auto px-4 py-6">
         {/* Intro */}
         <div className="mb-6">
-          <p className="text-stone-500">
+          <p className="text-stone-600 dark:text-neutral-400">
             Explore curated collections of masterpieces from The Met.
           </p>
         </div>

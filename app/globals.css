@@ -27,6 +27,15 @@
   ::selection {
     background-color: rgb(168 162 158 / 0.3);
   }
+
+  /* Body background */
+  body {
+    background-color: #FAF8F5;
+  }
+
+  body.dark {
+    background-color: #1C1917;
+  }
 }
 
 @layer components {
@@ -73,6 +82,25 @@
     100% {
       transform: translateX(100%);
     }
+  }
+
+  /* Museum label styling */
+  .museum-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-variant: small-caps;
+    color: rgb(41 37 36 / 0.6);
+  }
+
+  .dark .museum-label {
+    color: rgb(245 245 244 / 0.6);
+  }
+
+  /* Gallery divider */
+  .gallery-divider {
+    height: 1px;
+    background-color: rgb(180 151 90 / 0.3);
   }
 }
 

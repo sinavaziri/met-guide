@@ -176,8 +176,8 @@ function FeaturedObject() {
     <div className="space-y-4">
       {/* Featured label with shuffle button */}
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-stone-400 dark:text-neutral-500">
-          <span className="w-8 h-px bg-stone-300 dark:bg-neutral-700" />
+        <div className="flex items-center gap-2 museum-label">
+          <span className="w-8 h-px gallery-divider" />
           <span>Today&apos;s Featured</span>
         </div>
         <button
@@ -207,8 +207,8 @@ function FeaturedObject() {
           {/* Image */}
           {displayedObject.primaryImage && (
             <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden 
-                            bg-stone-100 dark:bg-neutral-900 shadow-lg shadow-stone-200/50 dark:shadow-black/50
-                            group-hover:shadow-xl group-hover:shadow-stone-300/50 dark:group-hover:shadow-black/70
+                            bg-stone-100 dark:bg-neutral-900 shadow-lg shadow-met-red/10 dark:shadow-black/50
+                            group-hover:shadow-xl group-hover:shadow-met-red/20 dark:group-hover:shadow-black/70
                             transition-shadow duration-300">
               <Image
                 src={displayedObject.primaryImage}
@@ -269,10 +269,10 @@ export default function Home() {
             }}
           >
             <div className="flex items-center gap-3 mb-3">
-              <div className="relative w-12 h-12 bg-gradient-to-br from-stone-800 via-stone-900 to-black 
-                              dark:from-amber-600 dark:via-amber-700 dark:to-amber-900
+              <div className="relative w-12 h-12 bg-gradient-to-br from-met-red via-[#A00E26] to-[#8A0B20]
+                              dark:from-met-gold dark:via-met-gold-light dark:to-met-gold
                               rounded-2xl flex items-center justify-center 
-                              text-white font-serif text-2xl shadow-lg shadow-stone-400/30 dark:shadow-amber-900/50
+                              text-white font-serif text-2xl shadow-lg shadow-met-red/30 dark:shadow-met-gold/40
                               group-hover:shadow-xl transition-shadow">
                 <span className="font-fraunces font-bold">M</span>
               </div>
@@ -291,11 +291,14 @@ export default function Home() {
         {/* Featured Object */}
         <FeaturedObject />
 
+        {/* Divider */}
+        <div className="mt-10 mb-6 gallery-divider" />
+
         {/* My Collection Link */}
-        <Link href="/favorites" className="mt-10 flex items-center justify-between p-4 
+        <Link href="/favorites" className="flex items-center justify-between p-4 
                                           bg-stone-50 dark:bg-neutral-900 rounded-2xl 
-                                          border border-stone-100 dark:border-neutral-800 
-                                          hover:bg-stone-100 dark:hover:bg-neutral-800 transition-all">
+                                          border border-met-gold/20 dark:border-neutral-800 
+                                          hover:bg-stone-100 dark:hover:bg-neutral-800 hover:border-met-gold/40 transition-all">
           <div className="flex items-center gap-3">
             <span className="text-xl">❤️</span>
             <span className="text-sm font-medium text-stone-700 dark:text-neutral-200">My Collection</span>
@@ -309,13 +312,13 @@ export default function Home() {
         <nav className="mt-6 grid grid-cols-3 gap-3">
           <Link 
             href="/scan"
-            className="p-4 bg-gradient-to-br from-amber-50 to-orange-50 
-                       dark:from-amber-950 dark:to-orange-950
-                       hover:from-amber-100 hover:to-orange-100 
-                       dark:hover:from-amber-900 dark:hover:to-orange-900
-                       rounded-2xl text-center transition-all hover:shadow-lg hover:shadow-amber-200/50 
-                       dark:hover:shadow-amber-900/30
-                       active:scale-95 border border-amber-100 dark:border-amber-900"
+            className="p-4 bg-gradient-to-br from-met-red/5 to-met-red/10
+                       dark:from-met-gold/10 dark:to-met-gold/20
+                       hover:from-met-red/10 hover:to-met-red/15
+                       dark:hover:from-met-gold/15 dark:hover:to-met-gold/25
+                       rounded-2xl text-center transition-all hover:shadow-lg hover:shadow-met-red/20
+                       dark:hover:shadow-met-gold/30
+                       active:scale-95 border border-met-red/20 dark:border-met-gold/30"
           >
             <div className="text-2xl mb-2">📷</div>
             <span className="text-sm font-medium text-stone-700 dark:text-neutral-200">Scan</span>

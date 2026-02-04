@@ -77,7 +77,7 @@ export default function BottomNav() {
   if (pathname.startsWith('/objects/')) return null;
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-lg border-t border-stone-200">
+    <nav className="fixed bottom-0 left-0 right-0 z-50 bg-white/90 dark:bg-met-charcoal/90 backdrop-blur-lg border-t border-stone-200 dark:border-met-espresso">
       <div className="max-w-md mx-auto flex items-center justify-around px-2 pb-[env(safe-area-inset-bottom)]">
         {tabs.map((tab) => {
           const isActive = tab.href === '/'
@@ -88,15 +88,19 @@ export default function BottomNav() {
             <Link
               key={tab.name}
               href={tab.href}
-              className={`flex flex-col items-center gap-0.5 py-2 px-3 min-w-[64px]
+              className={`flex flex-col items-center gap-0.5 py-2 px-3 min-w-[64px] relative
                 transition-colors duration-200
                 ${isActive
-                  ? 'text-stone-900'
-                  : 'text-stone-400 hover:text-stone-600'
+                  ? 'text-met-red dark:text-met-gold-light'
+                  : 'text-stone-400 hover:text-stone-600 dark:text-neutral-500 dark:hover:text-neutral-300'
                 }`}
             >
+              {/* Active indicator dot */}
+              {isActive && (
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-0.5 bg-met-red dark:bg-met-gold-light rounded-full" />
+              )}
               {tab.icon(isActive)}
-              <span className={`text-[10px] font-medium ${isActive ? 'text-stone-900' : 'text-stone-400'}`}>
+              <span className={`text-[10px] font-medium ${isActive ? 'text-met-red dark:text-met-gold-light' : 'text-stone-400 dark:text-neutral-500'}`}>
                 {tab.name}
               </span>
             </Link>

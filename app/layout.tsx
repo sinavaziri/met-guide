@@ -45,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${outfit.variable} ${fraunces.variable}`}>
-      <body className="antialiased bg-stone-50 dark:bg-neutral-950 text-stone-900 dark:text-neutral-100">
+      <body className="antialiased bg-met-ivory dark:bg-met-charcoal text-met-espresso dark:text-neutral-100">
         <Providers>
           {/* Theme toggle - fixed top right */}
           <div className="fixed top-4 right-4 z-40">

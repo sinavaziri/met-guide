@@ -158,8 +158,8 @@ export default function SearchPage() {
           <button
             onClick={handleSearch}
             disabled={isLoading || !query.trim()}
-            className="px-5 py-3 bg-stone-900 dark:bg-amber-600 text-white rounded-xl font-medium
-                       hover:bg-stone-800 dark:hover:bg-amber-500 active:scale-95 transition-all
+            className="px-5 py-3 bg-met-red dark:bg-met-gold text-white rounded-xl font-medium
+                       hover:bg-[#A00E26] dark:hover:bg-met-gold-light active:scale-95 transition-all
                        disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isLoading ? (
@@ -184,7 +184,7 @@ export default function SearchPage() {
                       className="px-3 py-1.5 bg-stone-100 dark:bg-neutral-900 
                                  hover:bg-stone-200 dark:hover:bg-neutral-800 rounded-full
                                  text-sm text-stone-600 dark:text-neutral-300 transition-colors
-                                 border border-stone-200 dark:border-neutral-800"
+                                 border border-met-gold/30 dark:border-neutral-800 hover:border-met-red dark:hover:border-met-gold"
                     >
                       {suggestion}
                     </button>
@@ -195,7 +195,7 @@ export default function SearchPage() {
 
             {/* Browse by Department */}
             <div>
-              <h2 className="text-base font-semibold text-stone-900 dark:text-neutral-100 mb-3">
+              <h2 className="museum-label mb-3">
                 Browse by Department
               </h2>
               <div className="grid grid-cols-2 gap-2">
@@ -206,7 +206,7 @@ export default function SearchPage() {
                     className="flex items-center gap-3 p-3 bg-stone-50 dark:bg-neutral-900/50 
                                hover:bg-stone-100 dark:hover:bg-neutral-800 rounded-xl 
                                transition-all active:scale-95 text-left
-                               border border-stone-100 dark:border-neutral-800"
+                               border border-stone-100 dark:border-neutral-800 hover:border-met-gold dark:hover:border-met-gold"
                   >
                     <span className="text-2xl">{dept.emoji}</span>
                     <span className="text-sm font-medium text-stone-700 dark:text-neutral-200">

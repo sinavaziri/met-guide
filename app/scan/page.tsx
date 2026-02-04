@@ -184,7 +184,7 @@ export default function ScanPage() {
         {!preview && (
           <div className="space-y-6">
             <div className="text-center py-8">
-              <div className="w-24 h-24 bg-gradient-to-br from-amber-100 to-orange-100 
+              <div className="w-24 h-24 bg-met-red/10 dark:bg-met-gold/20
                               rounded-3xl mx-auto mb-6 flex items-center justify-center">
                 <span className="text-5xl">📷</span>
               </div>
@@ -198,8 +198,8 @@ export default function ScanPage() {
 
             <button
               onClick={() => fileInputRef.current?.click()}
-              className="w-full py-4 bg-stone-900 dark:bg-amber-600 text-white rounded-2xl font-semibold
-                         hover:bg-stone-800 dark:hover:bg-amber-500 active:scale-[0.98] transition-all
+              className="w-full py-4 bg-met-red dark:bg-met-gold text-white rounded-2xl font-semibold
+                         hover:bg-[#A00E26] dark:hover:bg-met-gold-light active:scale-[0.98] transition-all
                          flex items-center justify-center gap-3"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -218,19 +218,19 @@ export default function ScanPage() {
             </div>
 
             {/* Tips */}
-            <div className="bg-stone-50 dark:bg-neutral-900 rounded-2xl p-5 space-y-3">
-              <h3 className="font-semibold text-stone-900 text-sm">Tips for best results</h3>
+            <div className="bg-stone-50 dark:bg-neutral-900 rounded-2xl p-5 space-y-3 border-l-2 border-met-gold/40">
+              <h3 className="font-semibold text-stone-900 dark:text-neutral-100 text-sm">Tips for best results</h3>
               <ul className="space-y-2 text-sm text-stone-600 dark:text-neutral-300">
                 <li className="flex items-start gap-2">
-                  <span className="text-amber-500">✓</span>
+                  <span className="text-met-red dark:text-met-gold">✓</span>
                   <span>Get close to the artwork for a clear shot</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-amber-500">✓</span>
+                  <span className="text-met-red dark:text-met-gold">✓</span>
                   <span>Avoid glare and reflections on glass</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-amber-500">✓</span>
+                  <span className="text-met-red dark:text-met-gold">✓</span>
                   <span>Include the full artwork in the frame</span>
                 </li>
               </ul>

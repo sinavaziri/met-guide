@@ -247,9 +247,9 @@ function DetailRow({ label, value }: { label: string; value: string | null }) {
   if (!value) return null;
   
   return (
-    <div className="py-3 border-b border-stone-100 last:border-0">
-      <dt className="text-xs uppercase tracking-wider text-stone-400 mb-1">{label}</dt>
-      <dd className="text-stone-700">{value}</dd>
+    <div className="py-3 border-b border-met-gold/10 last:border-0">
+      <dt className="museum-label mb-1">{label}</dt>
+      <dd className="text-met-espresso dark:text-neutral-300">{value}</dd>
     </div>
   );
 }
@@ -323,8 +323,9 @@ function GuideSection({ objectId, title }: { objectId: number; title: string }) 
         onClick={fetchNarration}
         disabled={isLoading}
         className="w-full flex items-center justify-between p-4 bg-gradient-to-r 
-                   from-amber-50 to-orange-50 hover:from-amber-100 hover:to-orange-100
-                   rounded-2xl transition-all duration-200 group border border-amber-100
+                   from-met-red/5 to-met-red/10 hover:from-met-red/10 hover:to-met-red/15
+                   dark:from-met-gold/10 dark:to-met-gold/20 dark:hover:from-met-gold/15 dark:hover:to-met-gold/25
+                   rounded-2xl transition-all duration-200 group border border-met-red/20 dark:border-met-gold/30
                    disabled:opacity-70 disabled:cursor-wait"
       >
         <div className="flex items-center gap-3">
@@ -392,8 +393,8 @@ function GuideSection({ objectId, title }: { objectId: number; title: string }) 
             <button
               onClick={handlePlayAudio}
               disabled={audio.isLoading && audio.currentTrack?.objectId === objectId}
-              className="flex items-center gap-2 px-4 py-2 bg-stone-900 text-white 
-                         rounded-full text-sm font-medium hover:bg-stone-800 
+              className="flex items-center gap-2 px-4 py-2 bg-met-red dark:bg-met-gold text-white 
+                         rounded-full text-sm font-medium hover:bg-[#A00E26] dark:hover:bg-met-gold-light
                          active:scale-95 transition-all disabled:opacity-50"
             >
               {audio.isLoading && audio.currentTrack?.objectId === objectId ? (
@@ -494,10 +495,10 @@ function ObjectDetail({ object }: { object: MetObject }) {
         </div>
       )}
       
-      {/* Title and Artist */}
-      <div className="space-y-2 px-1">
+      {/* Title and Artist - Museum wall label style */}
+      <div className="space-y-2 px-1 py-4 border-t border-b gallery-divider">
         <div className="flex items-start justify-between gap-3">
-          <h1 className="text-2xl font-bold text-stone-900 leading-tight flex-1">
+          <h1 className="text-2xl font-serif font-bold text-met-espresso dark:text-neutral-100 leading-tight flex-1">
             {object.title || 'Untitled'}
           </h1>
           <button
@@ -514,33 +515,39 @@ function ObjectDetail({ object }: { object: MetObject }) {
         </div>
         
         {object.artistDisplayName && (
-          <p className="text-lg text-stone-600">{object.artistDisplayName}</p>
+          <p className="text-lg text-met-espresso/80 dark:text-neutral-300">{object.artistDisplayName}</p>
         )}
         
         {object.artistDisplayBio && (
-          <p className="text-sm text-stone-400">{object.artistDisplayBio}</p>
+          <p className="text-sm museum-label">{object.artistDisplayBio}</p>
         )}
         
         {object.objectDate && (
-          <p className="text-stone-500 font-medium">{object.objectDate}</p>
+          <p className="text-stone-600 dark:text-neutral-400 font-medium museum-label">{object.objectDate}</p>
         )}
       </div>
       
       {/* Highlight badge */}
       {object.isHighlight && (
-        <div className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 
-                        text-amber-700 rounded-full text-sm font-medium mx-1">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-met-gold/10 
+                        text-met-gold dark:text-met-gold-light rounded-full text-sm font-medium mx-1">
           <span>⭐</span>
           <span>Museum Highlight</span>
         </div>
       )}
 
+      {/* Section divider */}
+      <div className="gallery-divider mx-1" />
+
       {/* Guide Section */}
       <GuideSection objectId={object.objectID} title={object.title || 'Untitled'} />
       
+      {/* Section divider */}
+      <div className="gallery-divider mx-1" />
+      
       {/* Details */}
-      <div className="bg-stone-50 rounded-2xl p-5 mx-1">
-        <h2 className="text-sm font-semibold text-stone-900 mb-3">Details</h2>
+      <div className="bg-stone-50 dark:bg-neutral-900/50 rounded-2xl p-5 mx-1 border border-met-gold/20">
+        <h2 className="museum-label mb-3">Details</h2>
         <dl className="space-y-0">
           <DetailRow label="Medium" value={object.medium} />
           <DetailRow label="Dimensions" value={object.dimensions} />

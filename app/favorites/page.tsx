@@ -48,7 +48,7 @@ export default function FavoritesPage() {
             onClick={() => setTab('favorites')} 
             className={`flex-1 py-2.5 rounded-xl text-sm font-medium transition-all ${
               tab === 'favorites' 
-                ? 'bg-stone-900 dark:bg-amber-600 text-white' 
+                ? 'bg-met-red dark:bg-met-gold text-white shadow-lg shadow-met-red/20 dark:shadow-met-gold/20' 
                 : 'bg-stone-100 dark:bg-neutral-900 text-stone-600 dark:text-neutral-400 hover:bg-stone-150 dark:hover:bg-neutral-800'
             }`}
           >
@@ -58,7 +58,7 @@ export default function FavoritesPage() {
             onClick={() => setTab('recent')} 
             className={`flex-1 py-2.5 rounded-xl text-sm font-medium transition-all ${
               tab === 'recent' 
-                ? 'bg-stone-900 dark:bg-amber-600 text-white' 
+                ? 'bg-met-red dark:bg-met-gold text-white shadow-lg shadow-met-red/20 dark:shadow-met-gold/20' 
                 : 'bg-stone-100 dark:bg-neutral-900 text-stone-600 dark:text-neutral-400 hover:bg-stone-150 dark:hover:bg-neutral-800'
             }`}
           >
@@ -68,7 +68,7 @@ export default function FavoritesPage() {
 
         {items.length === 0 ? (
           <div className="text-center py-16 px-4">
-            <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-stone-100 dark:bg-neutral-900 
+            <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-met-gold/10 dark:bg-met-gold/20
                             flex items-center justify-center">
               <span className="text-4xl">
                 {tab === 'favorites' ? '❤️' : '🕐'}
@@ -84,8 +84,8 @@ export default function FavoritesPage() {
             </p>
             <button
               onClick={() => router.push(tab === 'favorites' ? '/' : '/search')}
-              className="px-5 py-2.5 bg-stone-900 dark:bg-amber-600 text-white rounded-xl 
-                         font-medium hover:bg-stone-800 dark:hover:bg-amber-500 
+              className="px-5 py-2.5 bg-met-red dark:bg-met-gold text-white rounded-xl 
+                         font-medium hover:bg-[#A00E26] dark:hover:bg-met-gold-light 
                          active:scale-95 transition-all"
             >
               {tab === 'favorites' ? 'Explore Art' : 'Search Artworks'}

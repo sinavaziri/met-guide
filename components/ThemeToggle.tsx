@@ -13,7 +13,7 @@ export default function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="w-9 h-9 rounded-lg bg-stone-100 dark:bg-neutral-800 animate-pulse" />
+      <div className="w-9 h-9 rounded-lg bg-met-ivory dark:bg-met-charcoal border border-stone-200 dark:border-met-espresso animate-pulse" />
     );
   }
 
@@ -22,8 +22,8 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
-      className="p-2 rounded-lg bg-stone-100 dark:bg-neutral-800 hover:bg-stone-200 dark:hover:bg-neutral-700 
-                 transition-all active:scale-95 text-stone-700 dark:text-amber-400"
+      className="p-2 rounded-lg bg-met-ivory dark:bg-met-charcoal hover:bg-stone-200 dark:hover:bg-neutral-700 
+                 transition-all active:scale-95 text-met-espresso dark:text-met-gold-light border border-stone-200 dark:border-met-espresso"
       aria-label="Toggle theme"
     >
       {isDark ? (
