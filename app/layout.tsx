@@ -5,7 +5,6 @@ import { Outfit, Fraunces } from 'next/font/google';
 import './globals.css';
 import Providers from '@/components/Providers';
 import BottomNav from '@/components/BottomNav';
-import BottomNav from '@/components/BottomNav';
 import ThemeToggle from '@/components/ThemeToggle';
 
 const outfit = Outfit({ 
