@@ -97,7 +97,7 @@ describe('FavoritesPage', () => {
     (getFavorites as jest.Mock).mockReturnValue([]);
     render(<FavoritesPage />);
     expect(screen.getByText('No favorites yet')).toBeInTheDocument();
-    expect(screen.getByText('Tap the heart on any artwork to save it here.')).toBeInTheDocument();
+    expect(screen.getByText('Start building your personal collection by tapping the heart icon on any artwork you love.')).toBeInTheDocument();
   });
 
   it('should show empty state when no recent items', () => {
@@ -106,7 +106,7 @@ describe('FavoritesPage', () => {
     const recentTab = screen.getByText(/Recent \(0\)/);
     fireEvent.click(recentTab);
     expect(screen.getByText('No recently viewed')).toBeInTheDocument();
-    expect(screen.getByText('Artworks you view will appear here.')).toBeInTheDocument();
+    expect(screen.getByText('Artworks you explore will automatically appear here for quick access.')).toBeInTheDocument();
   });
 
   it('should navigate to artwork when clicked', () => {

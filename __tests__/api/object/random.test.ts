@@ -1,10 +1,5 @@
 /**
  * @jest-environment node
- * 
- * Milestone 0 Test: Random Object API Endpoint
- * 
- * Requirements:
- * - GET /api/object/random → fetches one hardcoded object ID (e.g., The Temple of Dendur) to prove connectivity
  */
 
 import { GET } from '@/app/api/object/random/route';
@@ -26,7 +21,7 @@ describe('GET /api/object/random', () => {
     jest.clearAllMocks();
   });
 
-  it('should fetch The Temple of Dendur object (ID: 547802)', async () => {
+  it('should fetch a highlighted object from the Met API', async () => {
     (global.fetch as jest.Mock).mockResolvedValueOnce({
       ok: true,
       json: async () => mockObject,
@@ -36,7 +31,8 @@ describe('GET /api/object/random', () => {
     const data = await response.json();
 
     expect(global.fetch).toHaveBeenCalledWith(
-      'https://collectionapi.metmuseum.org/public/collection/v1/objects/547802'
+      expect.stringContaining('https://collectionapi.metmuseum.org/public/collection/v1/objects/'),
+      expect.objectContaining({ next: { revalidate: 3600 } })
     );
     expect(response.status).toBe(200);
     expect(data.objectID).toBe(547802);
@@ -54,7 +50,6 @@ describe('GET /api/object/random', () => {
 
     expect(data).toHaveProperty('objectID');
     expect(data).toHaveProperty('title');
-    // These fields may or may not be present, but the API should return the object
     expect(data).toBeDefined();
   });
 
@@ -94,8 +89,8 @@ describe('GET /api/object/random', () => {
     await GET();
 
     expect(global.fetch).toHaveBeenCalledWith(
-      expect.stringContaining('collectionapi.metmuseum.org/public/collection/v1/objects/547802')
+      expect.stringContaining('collectionapi.metmuseum.org/public/collection/v1/objects/'),
+      expect.objectContaining({ next: { revalidate: 3600 } })
     );
   });
 });
-
